@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=17">
+  <link rel="stylesheet" href="css/style.css?v=18">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
@@ -621,11 +621,8 @@
     </div>
 
     <div class="ap-view" data-view="chat" hidden>
-      <p class="ap-hint" data-i18n="assist.hint">Ask about services, prices, hours or bookings — type below.</p>
-      <div class="ap-greeting"><span class="ap-bubble" data-i18n="assist.greet">Xin chào! 🌿 Which treatment are you interested in — foot, hot stone, oil, facial or nail? And when would you like to visit?</span></div>
-      <div class="ap-widget" data-widget-slot>
-        <p class="ap-note" data-no-agent data-i18n="assist.noagent" hidden>Chat is almost ready — paste the spa's ElevenLabs Agent ID into <code>js/config.js</code>.</p>
-      </div>
+      <div class="chat-log" data-chat-log></div>
+      <div class="chat-input" data-chat-input></div>
     </div>
 
     <div class="ap-actions">
@@ -719,11 +716,12 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=17"></script>
+  <script src="js/main.js?v=18"></script>
   <script src="js/menu.js?v=4"></script>
   <script src="js/reviews.js?v=1"></script>
   <script src="js/trio.js?v=1"></script>
-  <script src="js/contact.js?v=5"></script>
+  <script src="js/chat.js?v=1"></script>
+  <script src="js/contact.js?v=6"></script>
   <script src="js/promo.js?v=1"></script>
 </body>
 </html>

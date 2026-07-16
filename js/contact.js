@@ -45,8 +45,6 @@
   // ---------- Assistant panel: Voice (live) + Chat (widget) ----------
   const AGENT = cfg.ELEVENLABS_AGENT_ID;
   const panel = document.querySelector('[data-assistant]');
-  const slot = document.querySelector('[data-widget-slot]');
-  const noAgentNote = document.querySelector('[data-no-agent]');
   const titleEl = document.querySelector('[data-ap-title]');
   const voiceView = document.querySelector('[data-view="voice"]');
   const chatView = document.querySelector('[data-view="chat"]');
@@ -72,27 +70,11 @@
     setTimeout(() => { panel.hidden = true; }, 250);
   }
 
-  // ----- Chat (text) via the official convai widget + a prepared greeting -----
-  let widgetLoaded = false;
-  function loadWidget() {
-    if (widgetLoaded) return;
-    widgetLoaded = true;
-    if (!AGENT) { noAgentNote.hidden = false; return; }
-    // Official ElevenLabs embed (voice + text) — same public agent id.
-    const el = document.createElement('elevenlabs-convai');
-    el.setAttribute('agent-id', AGENT);
-    slot.appendChild(el);
-    const s = document.createElement('script');
-    s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-    s.async = true;
-    s.type = 'text/javascript';
-    document.body.appendChild(s);
-  }
+  // ----- Chat: scripted lead-capture flow (see js/chat.js) -----
   function openChat() {
     if (titleEl) titleEl.textContent = t('assist.chattitle', 'Chat with us');
     voiceView.hidden = true;
     chatView.hidden = false;
-    loadWidget();
     showPanel();
   }
 
@@ -134,9 +116,7 @@
   function voiceFailed() {
     convo = null;
     setOrb('idle');
-    setStatus(t('assist.voicefail', 'Opening the voice & chat widget…'));
-    // Fall back to the official ElevenLabs widget (it handles voice calls too)
-    loadWidget();
+    setStatus(t('assist.voicefail', 'Opening chat instead…'));
     setTimeout(() => { if (!panel.hidden) openChat(); }, 1300);
   }
   function stopVoice() {
