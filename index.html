@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=18">
+  <link rel="stylesheet" href="css/style.css?v=19">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
@@ -328,55 +328,38 @@
   <section class="therapists" id="loved">
     <p class="therapists-eyebrow reveal">4.8 ★ <span data-i18n="loved.eyebrow">· 209 Google reviews</span></p>
     <h2 class="h-serif therapists-title reveal" data-i18n="loved.title">Loved by <em>Guests</em></h2>
-    <div class="slider-wrap reveal">
-      <div class="slider" data-slider>
-        <div class="slide">
-          <div class="slide-img t-foot" role="img" aria-label="Foot massage"></div>
-          <div class="slide-txt">
-            <h3 data-i18n="svc.1">Foot Massage</h3>
-            <p class="b" data-i18n="svc.1x">Reflexology &amp; pressure points</p>
+    <div class="carousel reveal" data-carousel>
+      <button class="car-btn car-prev" data-car-prev aria-label="Previous">←</button>
+      <div class="car-stage" data-car-stage>
+        <div class="car-track" data-car-track>
+          <div class="car-slide">
+            <div class="car-card"><div class="car-img t-foot" role="img" aria-label="Foot massage"></div>
+              <div class="car-cap"><h3 data-i18n="svc.1">Foot Massage</h3><p data-i18n="svc.1x">Reflexology &amp; pressure points</p></div></div>
           </div>
-        </div>
-        <div class="slide">
-          <div class="slide-img t-stone" role="img" aria-label="Hot stone massage"></div>
-          <div class="slide-txt">
-            <h3 data-i18n="svc.2">Hot Stone</h3>
-            <p class="b" data-i18n="svc.2x">Warm basalt deep relief</p>
+          <div class="car-slide">
+            <div class="car-card"><div class="car-img t-stone" role="img" aria-label="Hot stone massage"></div>
+              <div class="car-cap"><h3 data-i18n="svc.2">Hot Stone</h3><p data-i18n="svc.2x">Warm basalt deep relief</p></div></div>
           </div>
-        </div>
-        <div class="slide">
-          <div class="slide-img t-oil" role="img" aria-label="Oil massage"></div>
-          <div class="slide-txt">
-            <h3 data-i18n="svc.3">Oil Massage</h3>
-            <p class="b" data-i18n="svc.3x">Aromatic full-body flow</p>
+          <div class="car-slide">
+            <div class="car-card"><div class="car-img t-oil" role="img" aria-label="Oil massage"></div>
+              <div class="car-cap"><h3 data-i18n="svc.3">Oil Massage</h3><p data-i18n="svc.3x">Aromatic full-body flow</p></div></div>
           </div>
-        </div>
-        <div class="slide">
-          <div class="slide-img t-body" role="img" aria-label="Full body massage"></div>
-          <div class="slide-txt">
-            <h3 data-i18n="svc.4">Full Body</h3>
-            <p class="b" data-i18n="svc.4x">Head-to-toe renewal</p>
+          <div class="car-slide">
+            <div class="car-card"><div class="car-img t-body" role="img" aria-label="Full body massage"></div>
+              <div class="car-cap"><h3 data-i18n="svc.4">Full Body</h3><p data-i18n="svc.4x">Head-to-toe renewal</p></div></div>
           </div>
-        </div>
-        <div class="slide">
-          <div class="slide-img t-facial" role="img" aria-label="Facial and skin care"></div>
-          <div class="slide-txt">
-            <h3 data-i18n="svc.5">Facial &amp; Skin Care</h3>
-            <p class="b" data-i18n="svc.5x">Gentle, glowing results</p>
+          <div class="car-slide">
+            <div class="car-card"><div class="car-img t-facial" role="img" aria-label="Facial and skin care"></div>
+              <div class="car-cap"><h3 data-i18n="svc.5">Facial &amp; Skin Care</h3><p data-i18n="svc.5x">Gentle, glowing results</p></div></div>
           </div>
-        </div>
-        <div class="slide">
-          <div class="slide-img t-nail" role="img" aria-label="Nail care"></div>
-          <div class="slide-txt">
-            <h3 data-i18n="svc.6">Nail</h3>
-            <p class="b" data-i18n="svc.6x">Manicure &amp; pedicure care</p>
+          <div class="car-slide">
+            <div class="car-card"><div class="car-img t-nail" role="img" aria-label="Nail care"></div>
+              <div class="car-cap"><h3 data-i18n="svc.6">Nail</h3><p data-i18n="svc.6x">Manicure &amp; pedicure care</p></div></div>
           </div>
         </div>
       </div>
-      <div class="slider-nav">
-        <button class="slider-btn prev" data-prev aria-label="Previous">←</button>
-        <button class="slider-btn next" data-next aria-label="Next">→</button>
-      </div>
+      <button class="car-btn car-next" data-car-next aria-label="Next">→</button>
+      <div class="car-dots" data-car-dots></div>
     </div>
   </section>
 
@@ -716,9 +699,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=18"></script>
+  <script src="js/main.js?v=19"></script>
   <script src="js/menu.js?v=4"></script>
   <script src="js/reviews.js?v=1"></script>
+  <script src="js/carousel.js?v=1"></script>
   <script src="js/trio.js?v=1"></script>
   <script src="js/chat.js?v=1"></script>
   <script src="js/contact.js?v=6"></script>

@@ -267,15 +267,7 @@ mobileMenu.querySelectorAll('a, .book-link').forEach((el) =>
   el.addEventListener('click', () => mobileMenu.classList.remove('open'))
 );
 
-// Services slider
-const slider = document.querySelector('[data-slider]');
-const step = () => slider.querySelector('.slide').offsetWidth + 28;
-document.querySelector('[data-prev]').addEventListener('click', () =>
-  slider.scrollBy({ left: -step(), behavior: 'smooth' })
-);
-document.querySelector('[data-next]').addEventListener('click', () =>
-  slider.scrollBy({ left: step(), behavior: 'smooth' })
-);
+// "Loved by Guests" coverflow carousel lives in js/carousel.js
 
 // Booking modal
 const modal = document.querySelector('[data-modal]');
