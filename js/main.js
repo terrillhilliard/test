@@ -44,9 +44,36 @@ const I18N = {
                       vi: 'Tặng thẻ cho liệu trình yêu thích, hoặc thẻ nạp để người nhận tự chọn khoảnh khắc thư giãn của riêng mình.' },
   'gift.cta':       { en: 'Choose', vi: 'Chọn quà' },
 
+  'about.eyebrow':  { en: 'Our story', vi: 'Câu chuyện của chúng tôi' },
   'about.title':    { en: 'About<br><em>Nón</em>', vi: 'Về<br><em>Nón</em>' },
-  'about.text':     { en: "Named after the Vietnamese conical hat, Nón Boutique Spa sits in the heart of An Thượng, Đà Nẵng's beachside quarter. Our therapists blend Vietnamese tradition with modern technique in every ritual — from foot and hot stone massage to facials and nail care.",
-                      vi: 'Lấy tên từ chiếc nón lá Việt Nam, Nón Boutique Spa nằm giữa lòng An Thượng — khu phố biển của Đà Nẵng. Đội ngũ kỹ thuật viên kết hợp truyền thống Việt với kỹ thuật hiện đại trong từng liệu trình — từ massage chân, đá nóng đến chăm sóc da mặt và làm móng.' },
+  'about.text':     { en: "Named after the Vietnamese conical hat, Nón Boutique Spa sits in the heart of An Thượng — Đà Nẵng's beachside quarter, moments from Mỹ Khê Beach. Our therapists blend Vietnamese tradition with modern technique in every ritual, from foot and hot stone massage to facials and nail care.",
+                      vi: 'Lấy tên từ chiếc nón lá Việt Nam, Nón Boutique Spa nằm giữa lòng An Thượng — khu phố biển của Đà Nẵng, chỉ vài bước tới biển Mỹ Khê. Đội ngũ kỹ thuật viên kết hợp truyền thống Việt với kỹ thuật hiện đại trong từng liệu trình — từ massage chân, đá nóng đến chăm sóc da mặt và làm móng.' },
+  'about.s1':       { en: '★ Google rating', vi: '★ điểm Google' },
+  'about.s2':       { en: 'reviews', vi: 'đánh giá' },
+  'about.s3':       { en: 'signature services', vi: 'dịch vụ đặc trưng' },
+  'about.s4':       { en: 'spoken here', vi: 'ngôn ngữ phục vụ' },
+  'about.p1':       { en: 'Authentic Balinese & Thai techniques', vi: 'Kỹ thuật Bali & Thái chính gốc' },
+  'about.p2':       { en: 'English-speaking, welcoming team', vi: 'Đội ngũ thân thiện, nói tiếng Anh' },
+  'about.p3':       { en: 'Couples & private rooms available', vi: 'Có phòng đôi & phòng riêng' },
+  'about.p4':       { en: 'Open late, every day until midnight', vi: 'Mở cửa muộn, mỗi ngày đến nửa đêm' },
+  'about.follow':   { en: 'Follow on Instagram', vi: 'Theo dõi Instagram' },
+
+  'book.eyebrow':   { en: 'Reservations', vi: 'Đặt chỗ' },
+  'book.title':     { en: 'Request a<br><em>Booking</em>', vi: 'Gửi<br><em>Yêu cầu đặt lịch</em>' },
+  'book.lead':      { en: "Tell us what you'd like and when — we'll open WhatsApp with your request ready to send, or reach us directly below.",
+                      vi: 'Cho chúng tôi biết bạn muốn gì và khi nào — chúng tôi sẽ mở WhatsApp với yêu cầu soạn sẵn, hoặc liên hệ trực tiếp bên dưới.' },
+  'book.call':      { en: 'call', vi: 'gọi' },
+  'book.hoursl':    { en: 'hours', vi: 'giờ mở cửa' },
+
+  'find.eyebrow':   { en: 'Find us', vi: 'Tìm chúng tôi' },
+  'find.title':     { en: 'In the heart of <em>An Thượng</em>', vi: 'Giữa lòng <em>An Thượng</em>' },
+  'find.near':      { en: 'Nearby', vi: 'Lân cận' },
+  'find.dir':       { en: 'Get directions →', vi: 'Chỉ đường →' },
+  'find.walk6':     { en: '6 min walk', vi: '6 phút đi bộ' },
+  'find.walk4':     { en: '4 min walk', vi: '4 phút đi bộ' },
+  'find.oustep':    { en: 'on the doorstep', vi: 'ngay trước cửa' },
+  'find.drive':     { en: '10 min drive', vi: '10 phút lái xe' },
+  'find.note':      { en: 'Distances are approximate.', vi: 'Khoảng cách chỉ mang tính tương đối.' },
 
   'feat.1t':        { en: 'Hot Stone<br><em>Massage</em>', vi: 'Massage<br><em>Đá nóng</em>' },
   'feat.1x':        { en: 'Smooth basalt stones, warmed and glided along tired muscles — deep heat that melts tension away.',
@@ -227,31 +254,64 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Booking request form: compose a structured WhatsApp message from the fields,
-// open it ready to send, then show the thank-you panel.
-document.querySelector('[data-form]').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const f = e.target;
-  const val = (n) => (f.elements[n] ? f.elements[n].value.trim() : '');
-  const services = [...f.querySelectorAll('input[name="svc"]:checked')]
-    .map((c) => c.closest('.chip').textContent.trim())
-    .join(', ');
-  const lines = [
-    'Xin chào Nón Boutique Spa! 🌿 Booking request / Yêu cầu đặt lịch:',
-    `Name / Tên: ${val('fname')} ${val('lname')}`,
-    `Phone / SĐT: ${val('phone')}`,
-    `Email: ${val('email')}`,
-    `Services / Dịch vụ: ${services || '—'}`,
-    `Dates / Ngày: ${val('dates') || '—'}`,
-  ];
-  if (val('notes')) lines.push(`Notes / Ghi chú: ${val('notes')}`);
-  const cfg = window.NBS_CONFIG || {};
-  if (cfg.WHATSAPP_NUMBER) {
-    window.open(`https://wa.me/${cfg.WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
-  }
-  modalForm.hidden = true;
-  modalThanks.hidden = false;
-});
+// Booking request forms (modal + inline #book section): compose a structured
+// WhatsApp message from the fields, open it ready to send, then show thanks.
+document.querySelectorAll('[data-form]').forEach((form) =>
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = e.target;
+    const val = (n) => (f.elements[n] ? f.elements[n].value.trim() : '');
+    const services = [...f.querySelectorAll('input[name="svc"]:checked')]
+      .map((c) => c.closest('.chip').textContent.trim())
+      .join(', ');
+    const lines = [
+      'Xin chào Nón Boutique Spa! 🌿 Booking request / Yêu cầu đặt lịch:',
+      `Name / Tên: ${val('fname')} ${val('lname')}`,
+      `Phone / SĐT: ${val('phone')}`,
+      `Email: ${val('email')}`,
+      `Services / Dịch vụ: ${services || '—'}`,
+      `Dates / Ngày: ${val('dates') || '—'}`,
+    ];
+    if (val('notes')) lines.push(`Notes / Ghi chú: ${val('notes')}`);
+    const cfg = window.NBS_CONFIG || {};
+    if (cfg.WHATSAPP_NUMBER) {
+      window.open(`https://wa.me/${cfg.WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+    }
+    const scope = f.closest('[data-book-scope]');
+    if (scope) {
+      const fv = scope.querySelector('[data-view="form"]');
+      const tv = scope.querySelector('[data-view="thanks"]');
+      if (fv) fv.hidden = true;
+      if (tv) tv.hidden = false;
+    }
+  })
+);
+
+// About stat counters — count up once when they scroll into view
+const statObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    statObserver.unobserve(el);
+    const target = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.dec || '0', 10);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      el.textContent = target.toFixed(dec);
+      return;
+    }
+    const start = performance.now();
+    const dur = 1400;
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(dec);
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toFixed(dec);
+    };
+    requestAnimationFrame(tick);
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('.stat-card b[data-count]').forEach((el) => statObserver.observe(el));
 
 // Footer year
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
