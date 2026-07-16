@@ -97,9 +97,9 @@ const I18N = {
   'foot.visit':     { en: 'visit us', vi: 'ghé thăm chúng tôi' },
   'foot.reviews':   { en: '· 209 Google reviews', vi: '· 209 đánh giá Google' },
 
-  'modal.title':    { en: 'Book <em>now</em>', vi: 'Đặt lịch <em>ngay</em>' },
-  'modal.sub':      { en: 'Leave a request and our team will contact you shortly to confirm the details — or call us at +84 704 493 053.',
-                      vi: 'Để lại thông tin và chúng tôi sẽ liên hệ xác nhận trong thời gian sớm nhất — hoặc gọi +84 704 493 053.' },
+  'modal.title':    { en: 'Booking <em>request</em>', vi: 'Yêu cầu <em>đặt lịch</em>' },
+  'modal.sub':      { en: "Fill in your details — we'll open WhatsApp with your request ready to send. Or call us at +84 704 493 053.",
+                      vi: 'Điền thông tin — chúng tôi sẽ mở WhatsApp với yêu cầu soạn sẵn. Hoặc gọi +84 704 493 053.' },
   'modal.thanks':   { en: 'Thank you for<br><em>your message!</em>', vi: 'Cảm ơn bạn đã<br><em>liên hệ!</em>' },
   'modal.thankssub':{ en: 'We will contact you shortly.', vi: 'Chúng tôi sẽ liên hệ với bạn sớm.' },
 
@@ -110,12 +110,19 @@ const I18N = {
                       vi: 'Trợ lý giọng nói &amp; chat sắp sẵn sàng — dán ElevenLabs Agent ID của spa vào <code>js/config.js</code>.' },
   'assist.book':    { en: 'Book now', vi: 'Đặt lịch ngay' },
 
-  'form.name':      { en: 'Name', vi: 'Họ tên' },
-  'form.nameph':    { en: 'Enter your name*', vi: 'Nhập họ tên của bạn*' },
+  'form.fname':     { en: 'First name', vi: 'Tên' },
+  'form.fnameph':   { en: 'First name*', vi: 'Tên*' },
+  'form.lname':     { en: 'Last name', vi: 'Họ' },
+  'form.lnameph':   { en: 'Last name*', vi: 'Họ*' },
   'form.email':     { en: 'Email address', vi: 'Địa chỉ email' },
-  'form.phone':     { en: 'Phone', vi: 'Số điện thoại' },
+  'form.phone':     { en: 'Phone number', vi: 'Số điện thoại' },
   'form.phoneph':   { en: 'Enter your mobile number*', vi: 'Nhập số điện thoại*' },
-  'form.submit':    { en: 'Submit →', vi: 'Gửi →' },
+  'form.services':  { en: 'Services inquiring', vi: 'Dịch vụ quan tâm' },
+  'form.dates':     { en: 'Dates available', vi: 'Ngày có thể đến' },
+  'form.datesph':   { en: 'e.g. 20–22 July, evenings after 6 PM', vi: 'VD: 20–22/7, buổi tối sau 18:00' },
+  'form.notes':     { en: 'Additional information', vi: 'Thông tin thêm' },
+  'form.notesph':   { en: 'Anything else we should know? (couples booking, allergies…)', vi: 'Điều gì khác chúng tôi nên biết? (đặt cho cặp đôi, dị ứng…)' },
+  'form.submit':    { en: 'Send via WhatsApp →', vi: 'Gửi qua WhatsApp →' },
 };
 
 const PAGE_TITLE = {
@@ -220,9 +227,28 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Demo form: show thank-you panel (no data is sent anywhere)
+// Booking request form: compose a structured WhatsApp message from the fields,
+// open it ready to send, then show the thank-you panel.
 document.querySelector('[data-form]').addEventListener('submit', (e) => {
   e.preventDefault();
+  const f = e.target;
+  const val = (n) => (f.elements[n] ? f.elements[n].value.trim() : '');
+  const services = [...f.querySelectorAll('input[name="svc"]:checked')]
+    .map((c) => c.closest('.chip').textContent.trim())
+    .join(', ');
+  const lines = [
+    'Xin chào Nón Boutique Spa! 🌿 Booking request / Yêu cầu đặt lịch:',
+    `Name / Tên: ${val('fname')} ${val('lname')}`,
+    `Phone / SĐT: ${val('phone')}`,
+    `Email: ${val('email')}`,
+    `Services / Dịch vụ: ${services || '—'}`,
+    `Dates / Ngày: ${val('dates') || '—'}`,
+  ];
+  if (val('notes')) lines.push(`Notes / Ghi chú: ${val('notes')}`);
+  const cfg = window.NBS_CONFIG || {};
+  if (cfg.WHATSAPP_NUMBER) {
+    window.open(`https://wa.me/${cfg.WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+  }
   modalForm.hidden = true;
   modalThanks.hidden = false;
 });

@@ -507,6 +507,26 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .modal form input {
   width: 100%; border: none; background: none; font: inherit; font-size: 1.05rem; color: var(--dark); outline: none;
 }
+.f-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.f-services { border: none; border-top: 1px solid rgba(35,33,32,.25); padding: 20px 0 6px; }
+.f-services legend {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .2em;
+  color: #8a8272; padding-top: 20px; margin-bottom: 12px;
+}
+.svc-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  position: relative; border: 1px solid rgba(35,33,32,.35); border-radius: 999px;
+  padding: 8px 16px; font-size: .78rem; letter-spacing: .04em; cursor: pointer;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:hover { border-color: var(--dark); }
+.chip:has(input:checked) { background: var(--dark); color: var(--cream); border-color: var(--dark); }
+.chip:has(input:focus-visible) { outline: 2px solid var(--yellow-deep); outline-offset: 2px; }
+.modal form textarea {
+  width: 100%; border: none; background: none; font: inherit; font-size: 1.05rem;
+  color: var(--dark); outline: none; resize: vertical; min-height: 64px;
+}
 .submit-btn {
   margin-top: 36px; width: 100%; padding: 22px;
   background: var(--dark); color: var(--cream); border-radius: 6px;
@@ -661,5 +681,6 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .hero-meta { text-align: left; }
   .gift-card { width: 230px; height: 320px; }
   .modal-in { padding: 80px 28px 40px; }
+  .f-grid { grid-template-columns: 1fr; gap: 0; }
   .lights .bulb:nth-child(n+7) { display: none; }
 }

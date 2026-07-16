@@ -522,23 +522,51 @@
     <div class="modal-in">
       <button class="modal-close" data-close-modal aria-label="Close">✕</button>
       <div class="modal-body" data-modal-form>
-        <h2 class="h-serif" data-i18n="modal.title">Book <em>now</em></h2>
-        <p class="modal-sub" data-i18n="modal.sub">Leave a request and our team will contact you shortly
-          to confirm the details — or call us at +84 704 493 053.</p>
+        <h2 class="h-serif" data-i18n="modal.title">Booking <em>request</em></h2>
+        <p class="modal-sub" data-i18n="modal.sub">Fill in your details — we'll open WhatsApp with your
+          request ready to send. Or call us at +84 704 493 053.</p>
         <form data-form>
+          <div class="f-grid">
+            <label>
+              <span data-i18n="form.fname">First name</span>
+              <input type="text" name="fname" data-i18n-ph="form.fnameph" placeholder="First name*" required minlength="2">
+            </label>
+            <label>
+              <span data-i18n="form.lname">Last name</span>
+              <input type="text" name="lname" data-i18n-ph="form.lnameph" placeholder="Last name*" required>
+            </label>
+          </div>
+          <div class="f-grid">
+            <label>
+              <span data-i18n="form.phone">Phone number</span>
+              <input type="tel" name="phone" data-i18n-ph="form.phoneph" placeholder="Enter your mobile number*" required>
+            </label>
+            <label>
+              <span data-i18n="form.email">Email address</span>
+              <input type="email" name="email" placeholder="E-mail*" required>
+            </label>
+          </div>
+          <fieldset class="f-services">
+            <legend data-i18n="form.services">Services inquiring</legend>
+            <div class="svc-chips">
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="svc.1">Foot Massage</span></label>
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="svc.4">Full Body</span></label>
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="svc.2">Hot Stone</span></label>
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="svc.3">Oil Massage</span></label>
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="svc.5">Facial &amp; Skin Care</span></label>
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="svc.6">Nail</span></label>
+              <label class="chip"><input type="checkbox" name="svc"><span data-i18n="mtab.shampoo">Shampoo</span></label>
+            </div>
+          </fieldset>
           <label>
-            <span data-i18n="form.name">Name</span>
-            <input type="text" name="name" data-i18n-ph="form.nameph" placeholder="Enter your name*" required minlength="2">
+            <span data-i18n="form.dates">Dates available</span>
+            <input type="text" name="dates" data-i18n-ph="form.datesph" placeholder="e.g. 20–22 July, evenings after 6 PM">
           </label>
           <label>
-            <span data-i18n="form.email">Email address</span>
-            <input type="email" name="email" placeholder="E-mail*" required>
+            <span data-i18n="form.notes">Additional information</span>
+            <textarea name="notes" rows="3" data-i18n-ph="form.notesph" placeholder="Anything else we should know? (couples booking, allergies…)"></textarea>
           </label>
-          <label>
-            <span data-i18n="form.phone">Phone</span>
-            <input type="tel" name="phone" data-i18n-ph="form.phoneph" placeholder="Enter your mobile number*">
-          </label>
-          <button type="submit" class="submit-btn"><span data-i18n="form.submit">Submit →</span></button>
+          <button type="submit" class="submit-btn"><span data-i18n="form.submit">Send via WhatsApp →</span></button>
         </form>
       </div>
       <div class="modal-body modal-thanks" data-modal-thanks hidden>
@@ -553,7 +581,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=11"></script>
   <script src="js/menu.js?v=2"></script>
   <script src="js/reviews.js?v=1"></script>
   <script src="js/contact.js?v=3"></script>
