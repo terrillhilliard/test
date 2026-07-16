@@ -1120,6 +1120,15 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .cc-btn svg { width: 22px; height: 22px; }
   .assistant-panel { right: 12px; left: 12px; bottom: 16px; width: auto; }
 }
+@media (max-width: 640px) {
+  /* Mobile hero: lift the title into the upper zone and enlarge to fill the screen.
+     Use margin (not transform) so the scroll parallax on .hero-title isn't overridden. */
+  .hero { align-items: flex-start; }
+  .hero-title { margin-top: 14vh; }
+  .hero-word-1 { margin-bottom: .5rem; }
+  .hero-word-1 .ltr { font-size: clamp(2.9rem, 14vw, 6rem); }
+  .hero-word-2 .ltr { font-size: clamp(6rem, 28vw, 11rem); line-height: .9; }
+}
 @media (max-width: 560px) {
   .hero-bottom { bottom: 8vh; }
   .hero-note { font-size: .82rem; letter-spacing: .14em; }
