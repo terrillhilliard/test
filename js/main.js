@@ -87,6 +87,9 @@ const I18N = {
   'board.d3':       { en: 'Relaxing herbal hair wash with head, neck & shoulder massage.',
                       vi: 'Gội đầu dưỡng sinh, kết hợp massage đầu, cổ và vai.' },
 
+  'rev.eyebrow':    { en: '· 209 Google reviews', vi: '· 209 đánh giá Google' },
+  'rev.title':      { en: 'What Guests <em>Say</em>', vi: 'Khách hàng <em>Chia sẻ</em>' },
+
   'marq.label':     { en: 'An Thượng · Đà Nẵng', vi: 'An Thượng · Đà Nẵng' },
   'marq.note':      { en: '— 209 Google reviews', vi: '— 209 đánh giá trên Google' },
 
