@@ -414,6 +414,103 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .submit-btn:hover { background: var(--yellow); color: var(--dark); }
 
+/* ---------- Floating contact cluster (glass) ---------- */
+.contact-cluster {
+  position: fixed; right: 22px; bottom: 22px; z-index: 90;
+  display: flex; flex-direction: column-reverse; align-items: center; gap: 12px;
+}
+.cc-items { display: flex; flex-direction: column; gap: 12px; }
+.cc-btn {
+  position: relative; overflow: hidden;
+  width: 54px; height: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(35,33,32,.62);
+  border: 1px solid rgba(246,240,228,.22);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  color: var(--cream); cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0,0,0,.4);
+  transition: box-shadow .3s, border-color .3s, color .3s, transform .3s;
+  animation: ccFloat 4.5s ease-in-out infinite;
+}
+.cc-btn svg { width: 24px; height: 24px; }
+.cc-items .cc-btn:nth-child(2) { animation-delay: .8s; }
+.cc-items .cc-btn:nth-child(3) { animation-delay: 1.6s; }
+@keyframes ccFloat { 50% { transform: translateY(-5px); } }
+.cc-btn:hover {
+  color: var(--yellow-soft); border-color: rgba(242,193,29,.65);
+  box-shadow: 0 10px 28px rgba(0,0,0,.4), 0 0 22px rgba(242,193,29,.35);
+}
+.cc-btn:focus-visible, .ap-act:focus-visible, .ap-close:focus-visible {
+  outline: 2px solid var(--yellow); outline-offset: 3px;
+}
+.cc-wa:hover { color: #6fd07a; border-color: rgba(111,208,122,.6); box-shadow: 0 10px 28px rgba(0,0,0,.4), 0 0 22px rgba(111,208,122,.3); }
+.cc-main { display: none; }
+
+.ripple {
+  position: absolute; width: 12px; height: 12px; border-radius: 50%;
+  background: rgba(242,193,29,.45); pointer-events: none;
+  transform: translate(-50%,-50%) scale(0);
+  animation: rippleGo .55s ease-out forwards;
+}
+@keyframes rippleGo { to { transform: translate(-50%,-50%) scale(12); opacity: 0; } }
+
+/* ---------- Assistant panel (glass) ---------- */
+.assistant-panel {
+  position: fixed; right: 22px; bottom: 90px; z-index: 95;
+  width: min(400px, calc(100vw - 32px));
+  background: rgba(30,28,27,.78);
+  border: 1px solid rgba(246,240,228,.2);
+  backdrop-filter: blur(20px) saturate(1.25);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
+  border-radius: 18px; padding: 20px 20px 16px;
+  box-shadow: 0 30px 70px rgba(0,0,0,.55);
+  opacity: 0; transform: translateY(16px) scale(.98);
+  transition: opacity .25s ease, transform .25s cubic-bezier(.2,.65,.3,1);
+}
+.assistant-panel.open { opacity: 1; transform: none; }
+.ap-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.ap-title { font-family: var(--script); font-weight: 700; font-size: 1.5rem; color: var(--yellow); }
+.ap-close { opacity: .6; font-size: 1rem; transition: opacity .3s; }
+.ap-close:hover { opacity: 1; }
+.ap-hint { font-size: .8rem; color: var(--warm-gray); margin-bottom: 14px; }
+.ap-widget { min-height: 120px; display: flex; align-items: center; justify-content: center; }
+.ap-widget elevenlabs-convai { position: static !important; width: 100%; }
+.ap-note { font-size: .82rem; color: var(--cream-2); text-align: center; padding: 20px 8px; }
+.ap-note code { color: var(--yellow-soft); font-size: .78rem; }
+.ap-actions { display: flex; gap: 10px; margin-top: 14px; }
+.ap-act {
+  position: relative; overflow: hidden; flex: 1; text-align: center;
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .14em;
+  border: 1px solid rgba(242,193,29,.5); border-radius: 999px;
+  padding: 11px 10px; color: var(--cream); transition: background .3s, color .3s;
+}
+.ap-act:hover { background: var(--yellow); color: var(--dark); }
+.ap-act-wa { border-color: rgba(111,208,122,.5); }
+.ap-act-wa:hover { background: #4fb35a; color: #fff; }
+
+/* ---------- TTS speaker buttons ---------- */
+.tts-btn {
+  margin-left: 16px; vertical-align: middle;
+  width: 38px; height: 38px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(165,156,136,.5); color: var(--warm-gray);
+  transition: color .3s, border-color .3s, box-shadow .3s;
+}
+.tts-btn svg { width: 18px; height: 18px; }
+.tts-btn:hover { color: var(--yellow-soft); border-color: var(--yellow-soft); }
+.tts-btn.loading { animation: ttsPulse 1s ease-in-out infinite; }
+.tts-btn.playing { color: var(--yellow); border-color: var(--yellow); box-shadow: 0 0 14px rgba(242,193,29,.35); }
+.tts-btn.err { color: #d0685a; border-color: #d0685a; }
+@keyframes ttsPulse { 50% { opacity: .4; } }
+
+/* Reduced motion: stop float/ripple/pulse, keep everything usable */
+@media (prefers-reduced-motion: reduce) {
+  .cc-btn, .bulb, .hero-hats, .marquee-track, .tts-btn.loading { animation: none !important; }
+  .assistant-panel { transition: opacity .2s ease; transform: none; }
+  .reveal { transition: opacity .4s ease; transform: none; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .main-menu, .header .book-link { display: none; }
@@ -426,6 +523,18 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .feature-row { grid-template-columns: 1fr; gap: 36px; }
   .feature-img { height: 380px; }
   .lights .bulb:nth-child(n+9) { display: none; }
+}
+@media (max-width: 700px) {
+  /* Collapse the cluster into a single expandable "+" FAB */
+  .cc-main { display: flex; }
+  .contact-cluster .cc-items {
+    opacity: 0; pointer-events: none; transform: translateY(14px);
+    transition: opacity .3s ease, transform .3s cubic-bezier(.2,.65,.3,1);
+  }
+  .contact-cluster.open .cc-items { opacity: 1; pointer-events: auto; transform: none; }
+  .contact-cluster .cc-main svg { transition: transform .3s; }
+  .contact-cluster.open .cc-main svg { transform: rotate(45deg); }
+  .assistant-panel { right: 16px; bottom: 88px; }
 }
 @media (max-width: 560px) {
   .hero-bottom-in { flex-direction: column; align-items: flex-start; }

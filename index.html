@@ -213,34 +213,43 @@
     <div class="container">
 
       <div class="feature-row reveal">
-        <div class="feature-desc">
+        <div class="feature-desc" data-tts-scope>
           <h3 class="h-serif" data-i18n="feat.1t">Hot Stone<br><em>Massage</em></h3>
           <div class="feature-mini mini-1"></div>
           <p data-i18n="feat.1x">Smooth basalt stones, warmed and glided along tired muscles —
             deep heat that melts tension away.</p>
           <a href="#" class="text-link" data-open-modal data-i18n="cta.more">Read More</a>
+          <button class="tts-btn" data-tts aria-label="Listen to this description" title="Listen">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
         </div>
         <div class="feature-img img-1"></div>
       </div>
 
       <div class="feature-row reveal">
-        <div class="feature-desc">
+        <div class="feature-desc" data-tts-scope>
           <h3 class="h-serif" data-i18n="feat.2t">Foot<br><em>Massage</em></h3>
           <div class="feature-mini mini-2"></div>
           <p data-i18n="feat.2x">A guest favourite after a day of beach and city walking —
             reflexology pressure points that revive from the ground up.</p>
           <a href="#" class="text-link" data-open-modal data-i18n="cta.more">Read More</a>
+          <button class="tts-btn" data-tts aria-label="Listen to this description" title="Listen">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
         </div>
         <div class="feature-img img-2"></div>
       </div>
 
       <div class="feature-row reveal">
-        <div class="feature-desc">
+        <div class="feature-desc" data-tts-scope>
           <h3 class="h-serif" data-i18n="feat.3t">Oil<br><em>Massage</em></h3>
           <div class="feature-mini mini-3"></div>
           <p data-i18n="feat.3x">Long, flowing strokes with warm aromatic oil — a classic
             full-body ritual that leaves you rested and quietly renewed.</p>
           <a href="#" class="text-link" data-open-modal data-i18n="cta.more">Read More</a>
+          <button class="tts-btn" data-tts aria-label="Listen to this description" title="Listen">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </button>
         </div>
         <div class="feature-img img-3"></div>
       </div>
@@ -346,6 +355,40 @@
     </div>
   </footer>
 
+  <!-- Floating contact cluster: Voice / Chat / WhatsApp -->
+  <div class="contact-cluster" data-cluster>
+    <button class="cc-btn cc-main" data-cluster-toggle aria-label="Contact options" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="cc-items">
+      <button class="cc-btn cc-voice" data-open-assistant aria-label="Voice assistant" title="Voice">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="cc-btn cc-chat" data-open-assistant aria-label="Chat assistant" title="Chat">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H9l-5 4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 8.5h8M8 11.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <a class="cc-btn cc-wa" data-whatsapp href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.7-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c0 4 2.5 6.5 6.5 6.5l.8-1.8-2-1.2-1 .7c-1.2-.6-1.8-1.2-2.3-2.3l.7-1-1.2-2L9 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Assistant panel: one ElevenLabs agent shared by Voice + Chat -->
+  <div class="assistant-panel" data-assistant hidden>
+    <div class="ap-head">
+      <p class="ap-title" data-i18n="assist.title">Nón Assistant</p>
+      <button class="ap-close" data-close-assistant aria-label="Close">✕</button>
+    </div>
+    <p class="ap-hint" data-i18n="assist.hint">Ask about services, prices, hours or bookings — speak or type. Voice replies use our Vietnamese voice.</p>
+    <div class="ap-widget" data-widget-slot>
+      <p class="ap-note" data-no-agent data-i18n="assist.noagent" hidden>Voice &amp; chat are almost ready — paste the spa's ElevenLabs Agent ID into <code>js/config.js</code>.</p>
+    </div>
+    <div class="ap-actions">
+      <button class="ap-act" data-assistant-book data-i18n="assist.book">Book now</button>
+      <a class="ap-act ap-act-wa" data-whatsapp href="#" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
   <!-- Booking modal -->
   <div class="modal" data-modal>
     <div class="modal-overlay" data-close-modal></div>
@@ -378,6 +421,8 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=5"></script>
+  <script src="js/config.js?v=1"></script>
+  <script src="js/main.js?v=6"></script>
+  <script src="js/contact.js?v=1"></script>
 </body>
 </html>

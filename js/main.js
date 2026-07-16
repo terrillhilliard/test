@@ -94,6 +94,13 @@ const I18N = {
   'modal.thanks':   { en: 'Thank you for<br><em>your message!</em>', vi: 'Cảm ơn bạn đã<br><em>liên hệ!</em>' },
   'modal.thankssub':{ en: 'We will contact you shortly.', vi: 'Chúng tôi sẽ liên hệ với bạn sớm.' },
 
+  'assist.title':   { en: 'Nón Assistant', vi: 'Trợ lý Nón' },
+  'assist.hint':    { en: 'Ask about services, prices, hours or bookings — speak or type. Voice replies use our Vietnamese voice.',
+                      vi: 'Hỏi về dịch vụ, giá, giờ mở cửa hoặc đặt lịch — nói hoặc nhắn tin. Trợ lý trả lời bằng giọng nữ Việt Nam.' },
+  'assist.noagent': { en: 'Voice &amp; chat are almost ready — paste the spa\'s ElevenLabs Agent ID into <code>js/config.js</code>.',
+                      vi: 'Trợ lý giọng nói &amp; chat sắp sẵn sàng — dán ElevenLabs Agent ID của spa vào <code>js/config.js</code>.' },
+  'assist.book':    { en: 'Book now', vi: 'Đặt lịch ngay' },
+
   'form.name':      { en: 'Name', vi: 'Họ tên' },
   'form.nameph':    { en: 'Enter your name*', vi: 'Nhập họ tên của bạn*' },
   'form.email':     { en: 'Email address', vi: 'Địa chỉ email' },
