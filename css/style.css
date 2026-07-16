@@ -193,29 +193,102 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .circled { position: relative; white-space: nowrap; font-style: italic; }
 .circled svg { position: absolute; inset: -32% -8%; width: 116%; height: 165%; color: var(--yellow); }
 
-/* ---------- Trio ---------- */
-.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 0 8px; }
+/* ---------- Trio — glass-liquid interactive cards ---------- */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 0 12px; perspective: 1300px; }
 .trio-item {
-  position: relative; overflow: hidden; min-height: 560px; display: flex;
-  border-radius: 4px;
+  position: relative; overflow: hidden; min-height: 580px; display: block;
+  border-radius: 18px; isolation: isolate; transform-style: preserve-3d;
+  box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  transition: transform .3s cubic-bezier(.2,.65,.3,1), box-shadow .5s;
+  will-change: transform;
 }
-.trio-bg { position: absolute; inset: 0; transition: transform .8s cubic-bezier(.2,.65,.3,1); }
-.trio-item:hover .trio-bg { transform: scale(1.05); }
-.trio-1 .trio-bg { background: linear-gradient(170deg, #4a4335 0%, #35302a 55%, #232120 100%); }
-.trio-2 .trio-bg { background: linear-gradient(170deg, #3f4433 0%, #2f3329 55%, #1f211d 100%); }
-.trio-3 .trio-bg { background: linear-gradient(170deg, #55471f 0%, #3a331e 55%, #262218 100%); }
-.trio-leaf { position: absolute; right: -10%; bottom: -10%; width: 65%; transition: transform .8s; }
-.trio-item:hover .trio-leaf { transform: rotate(6deg) scale(1.08); }
-.trio-desc {
-  position: relative; z-index: 2; display: flex; flex-direction: column;
-  justify-content: space-between; padding: 44px 40px; width: 100%;
+.trio-item:hover { box-shadow: 0 34px 80px rgba(0,0,0,.55); }
+
+/* photo layer */
+.trio-photo {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transform: scale(1.03); transition: transform 1s cubic-bezier(.2,.65,.3,1);
+}
+.trio-item:hover .trio-photo { transform: scale(1.09); }
+.trio-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,18,16,.28) 0%, rgba(20,18,16,.12) 38%, rgba(18,16,14,.82) 100%);
+}
+.trio-1 .trio-photo { background-image: url("https://images.pexels.com/photos/19641820/pexels-photo-19641820.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+.trio-2 .trio-photo { background-image: url("https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+.trio-3 .trio-photo { background-image: url("https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+
+/* drifting golden "liquid oil" blobs behind the glass */
+.trio-liquid { position: absolute; inset: 0; overflow: hidden; mix-blend-mode: screen; opacity: .8; }
+.trio-liquid i {
+  position: absolute; border-radius: 50%; filter: blur(26px);
+  background: radial-gradient(circle at 35% 35%, rgba(249,226,138,.75), rgba(242,193,29,.32) 55%, transparent 72%);
+  animation: trioBlob 15s ease-in-out infinite;
+}
+.trio-liquid i:nth-child(1) { width: 230px; height: 230px; left: -44px; top: -34px; }
+.trio-liquid i:nth-child(2) { width: 190px; height: 190px; right: -34px; top: 42%; animation-duration: 19s; animation-delay: -5s; }
+.trio-liquid i:nth-child(3) { width: 170px; height: 170px; left: 28%; bottom: -46px; animation-duration: 17s; animation-delay: -9s; }
+@keyframes trioBlob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(34px, 22px) scale(1.18); }
+  66% { transform: translate(-22px, 32px) scale(.88); }
+}
+
+/* frosted glass panel */
+.trio-glass {
+  position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 2;
+  display: flex; flex-direction: column; gap: 14px; padding: 26px 24px;
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(255,255,255,.16), rgba(255,255,255,.04));
+  border: 1px solid rgba(246,240,228,.24);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  box-shadow: inset 0 1px 1px rgba(255,255,255,.35), 0 12px 30px rgba(0,0,0,.32);
+  transform: translateZ(0);
+  transition: transform .4s cubic-bezier(.2,.65,.3,1), background .4s;
+}
+.trio-item:hover .trio-glass { transform: translateZ(45px); background: linear-gradient(160deg, rgba(255,255,255,.2), rgba(255,255,255,.06)); }
+.trio-idx {
+  position: absolute; top: -50px; left: 4px; font-family: var(--display); font-style: italic;
+  font-weight: 600; font-size: 2.3rem; color: rgba(246,240,228,.9); text-shadow: 0 3px 14px rgba(0,0,0,.6);
 }
 .trio-title {
-  font-family: var(--serif); font-size: clamp(2rem, 3.4vw, 3.2rem); line-height: 1.05;
-  text-transform: uppercase; font-weight: 300;
+  font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.02;
+  text-transform: uppercase; font-weight: 300; color: var(--cream);
 }
 .trio-title em { font-style: italic; text-transform: none; color: var(--yellow-soft); }
-.trio-variants { font-size: .78rem; text-transform: uppercase; letter-spacing: .16em; color: var(--cream-2); }
+.trio-tags {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
+  max-height: 0; opacity: 0; overflow: hidden;
+  transition: max-height .5s ease, opacity .4s ease, margin-top .4s ease;
+}
+.trio-item:hover .trio-tags { max-height: 64px; opacity: 1; }
+.trio-tags b {
+  font-weight: 400; font-size: .64rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--cream-2); border: 1px solid rgba(246,240,228,.32); border-radius: 999px; padding: 5px 11px;
+}
+.trio-foot { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.trio-variants { font-size: .7rem; text-transform: uppercase; letter-spacing: .13em; color: var(--cream-2); }
+.trio-arrow {
+  width: 40px; height: 40px; flex: none; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  border: 1px solid rgba(242,193,29,.6); color: var(--yellow-soft);
+  transition: background .35s, color .35s, transform .35s;
+}
+.trio-item:hover .trio-arrow { background: var(--yellow); color: var(--dark); transform: translateX(4px); }
+
+/* cursor-following sheen */
+.trio-sheen {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 15%), rgba(255,255,255,.2), transparent 60%);
+  transition: opacity .4s;
+}
+.trio-item:hover .trio-sheen { opacity: 1; }
+/* touch devices have no hover — reveal tags and pop the glass by default */
+@media (hover: none) {
+  .trio-tags { max-height: 64px; opacity: 1; }
+  .trio-arrow { background: var(--yellow); color: var(--dark); }
+}
 
 /* ---------- Interactive price menu (dark glass, brand yellow accents) ---------- */
 .board { padding: 150px 0 40px; }
@@ -792,7 +865,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 @media (prefers-reduced-motion: reduce) {
   .cc-btn, .bulb, .hero-hats, .marquee-track, .tts-btn.loading,
   .steam, .ripple.r1, .ripple.r2, .ripple.r3, .flame, .glow, .drip,
-  .dur-pill, .menu-price.bump { animation: none !important; }
+  .dur-pill, .menu-price.bump, .trio-liquid i, .about-hat svg, .map-pin { animation: none !important; }
+  .trio-item, .trio-glass { transform: none !important; }
+  .trio-tags { max-height: 64px; opacity: 1; }
   .assistant-panel { transition: opacity .2s ease; transform: none; }
   .reveal { transition: opacity .4s ease; transform: none; }
   .hero-word { overflow: visible; }

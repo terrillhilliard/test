@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=13">
+  <link rel="stylesheet" href="css/style.css?v=14">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
@@ -107,37 +107,55 @@
     </div>
   </section>
 
-  <!-- Trio cards -->
+  <!-- Trio cards — glass-liquid interactive -->
   <section class="trio" id="services">
-    <a href="#" class="trio-item trio-1 reveal" data-open-modal>
-      <span class="trio-bg"></span>
-      <svg class="trio-leaf" viewBox="0 0 200 200" aria-hidden="true">
-        <path d="M100 10 C 40 50, 20 120, 40 190 C 110 170, 160 120, 170 60 C 175 30, 150 15, 100 10 Z" fill="rgba(243,238,232,.10)"/>
-      </svg>
-      <span class="trio-desc">
-        <span class="trio-title" data-i18n="trio.1">Foot<br><em>&amp;</em> Full Body</span>
-        <span class="trio-variants" data-i18n="trio.1v">massage rituals</span>
+    <a href="#" class="trio-item trio-1 reveal" data-open-modal data-tilt>
+      <span class="trio-photo" aria-hidden="true"></span>
+      <span class="trio-liquid" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="trio-glass">
+        <span class="trio-idx">01</span>
+        <span class="trio-head">
+          <span class="trio-title" data-i18n="trio.1">Foot<br><em>&amp;</em> Full Body</span>
+          <span class="trio-tags"><b data-i18n="tag.foot">Foot</b><b data-i18n="tag.body">Full Body</b></span>
+        </span>
+        <span class="trio-foot">
+          <span class="trio-variants" data-i18n="trio.1v">60–120 min · from 200.000₫</span>
+          <span class="trio-arrow" aria-hidden="true">→</span>
+        </span>
       </span>
+      <span class="trio-sheen" aria-hidden="true"></span>
     </a>
-    <a href="#" class="trio-item trio-2 reveal" data-open-modal>
-      <span class="trio-bg"></span>
-      <svg class="trio-leaf" viewBox="0 0 200 200" aria-hidden="true">
-        <path d="M100 10 C 40 50, 20 120, 40 190 C 110 170, 160 120, 170 60 C 175 30, 150 15, 100 10 Z" fill="rgba(243,238,232,.10)"/>
-      </svg>
-      <span class="trio-desc">
-        <span class="trio-title" data-i18n="trio.2"><em>hot</em><br>stone<br><em>&amp;</em> Oil</span>
-        <span class="trio-variants" data-i18n="trio.2v">warm therapies</span>
+    <a href="#" class="trio-item trio-2 reveal" data-open-modal data-tilt>
+      <span class="trio-photo" aria-hidden="true"></span>
+      <span class="trio-liquid" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="trio-glass">
+        <span class="trio-idx">02</span>
+        <span class="trio-head">
+          <span class="trio-title" data-i18n="trio.2"><em>hot</em><br>stone<br><em>&amp;</em> Oil</span>
+          <span class="trio-tags"><b data-i18n="tag.stone">Hot Stone</b><b data-i18n="tag.oil">Oil</b></span>
+        </span>
+        <span class="trio-foot">
+          <span class="trio-variants" data-i18n="trio.2v">60–120 min · oil &amp; hot stone</span>
+          <span class="trio-arrow" aria-hidden="true">→</span>
+        </span>
       </span>
+      <span class="trio-sheen" aria-hidden="true"></span>
     </a>
-    <a href="#" class="trio-item trio-3 reveal" data-open-modal>
-      <span class="trio-bg"></span>
-      <svg class="trio-leaf" viewBox="0 0 200 200" aria-hidden="true">
-        <path d="M100 10 C 40 50, 20 120, 40 190 C 110 170, 160 120, 170 60 C 175 30, 150 15, 100 10 Z" fill="rgba(243,238,232,.10)"/>
-      </svg>
-      <span class="trio-desc">
-        <span class="trio-title" data-i18n="trio.3">Facial<br><em>&amp;</em> Nail</span>
-        <span class="trio-variants" data-i18n="trio.3v">skin &amp; care</span>
+    <a href="#" class="trio-item trio-3 reveal" data-open-modal data-tilt>
+      <span class="trio-photo" aria-hidden="true"></span>
+      <span class="trio-liquid" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="trio-glass">
+        <span class="trio-idx">03</span>
+        <span class="trio-head">
+          <span class="trio-title" data-i18n="trio.3">Facial<br><em>&amp;</em> Nail</span>
+          <span class="trio-tags"><b data-i18n="tag.facial">Facial</b><b data-i18n="tag.nail">Nail</b></span>
+        </span>
+        <span class="trio-foot">
+          <span class="trio-variants" data-i18n="trio.3v">facial · manicure · pedicure</span>
+          <span class="trio-arrow" aria-hidden="true">→</span>
+        </span>
       </span>
+      <span class="trio-sheen" aria-hidden="true"></span>
     </a>
   </section>
 
@@ -668,9 +686,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=13"></script>
+  <script src="js/main.js?v=14"></script>
   <script src="js/menu.js?v=3"></script>
   <script src="js/reviews.js?v=1"></script>
+  <script src="js/trio.js?v=1"></script>
   <script src="js/contact.js?v=3"></script>
 </body>
 </html>
