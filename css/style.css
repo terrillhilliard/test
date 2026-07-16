@@ -573,11 +573,12 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .marquee-track { display: flex; width: max-content; animation: scroll 28s linear infinite; }
 .marquee-track.reverse { animation-direction: reverse; animation-duration: 34s; }
 .marquee-track span {
-  font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4.6rem);
-  text-transform: uppercase; white-space: nowrap; color: var(--cream-2); font-weight: 300;
+  display: inline-flex; align-items: center; gap: .55em;
+  font-family: var(--sans); font-size: clamp(1.7rem, 4.4vw, 3.2rem);
+  font-weight: 500; text-transform: uppercase; white-space: nowrap;
+  color: var(--cream-2); letter-spacing: .12em;
 }
-.m-1 .marquee-track span { font-family: var(--script); font-weight: 700; text-transform: none; color: var(--yellow); }
-.m-2 .marquee-track span { font-style: italic; }
+.mq-flag { width: clamp(30px, 3.6vw, 46px); height: auto; border-radius: 3px; box-shadow: 0 2px 8px rgba(0,0,0,.35); flex: none; }
 @keyframes scroll { to { transform: translateX(-50%); } }
 
 /* ---------- Big button ---------- */
