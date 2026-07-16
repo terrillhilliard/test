@@ -214,9 +214,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(20,18,16,.28) 0%, rgba(20,18,16,.12) 38%, rgba(18,16,14,.82) 100%);
 }
-.trio-1 .trio-photo { background-image: url("https://images.pexels.com/photos/19641820/pexels-photo-19641820.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+.trio-1 .trio-photo { background-image: url("https://images.pexels.com/photos/6186750/pexels-photo-6186750.jpeg?auto=compress&cs=tinysrgb&w=900"); }
 .trio-2 .trio-photo { background-image: url("https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=900"); }
-.trio-3 .trio-photo { background-image: url("https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=900"); }
+.trio-3 .trio-photo { background-image: url("https://images.pexels.com/photos/13899861/pexels-photo-13899861.jpeg?auto=compress&cs=tinysrgb&w=900"); }
 
 /* drifting golden "liquid oil" blobs behind the glass */
 .trio-liquid { position: absolute; inset: 0; overflow: hidden; mix-blend-mode: screen; opacity: .8; }
@@ -352,11 +352,11 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .dur-pill:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
 .menu-price-wrap { min-height: 96px; display: flex; flex-direction: column; justify-content: center; }
 .menu-price {
-  font-family: var(--display); font-weight: 600; font-style: italic; line-height: 1;
-  font-size: clamp(2.7rem, 7vw, 4.2rem); letter-spacing: -.01em;
-  background: linear-gradient(120deg, #fbe9a8 0%, #f2c11d 52%, #c99e0a 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  font-family: var(--display); font-weight: 600; font-style: normal; line-height: 1;
+  font-size: clamp(2.5rem, 6.4vw, 3.8rem); letter-spacing: -.005em;
+  color: var(--cream); font-variant-numeric: lining-nums tabular-nums;
 }
+.menu-price .cur-sym { color: var(--yellow-soft); font-weight: 500; }
 .menu-price.bump { animation: priceBump .5s cubic-bezier(.2,.65,.3,1); }
 @keyframes priceBump { from { opacity: 0; transform: translateY(14px); } }
 .menu-pricenote {
@@ -485,7 +485,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .img-1 { background-image: url("https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=1000"); background-color: #241f1a; }
 .img-2 { background-image: url("https://images.pexels.com/photos/6628700/pexels-photo-6628700.jpeg?auto=compress&cs=tinysrgb&w=1000"); background-color: #241f1a; }
-.img-3 { background-image: url("https://images.pexels.com/photos/5793805/pexels-photo-5793805.jpeg?auto=compress&cs=tinysrgb&w=1000"); background-color: #241f1a; }
+.img-3 { background-image: url("https://images.pexels.com/photos/6186747/pexels-photo-6186747.jpeg?auto=compress&cs=tinysrgb&w=1000"); background-color: #241f1a; }
 
 /* ---------- Loved by guests ---------- */
 .therapists { padding: 100px 0 120px; background: var(--darker); }
@@ -511,9 +511,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .t-foot   { background-image: url("https://images.pexels.com/photos/6628700/pexels-photo-6628700.jpeg?auto=compress&cs=tinysrgb&w=700"); }
 .t-stone  { background-image: url("https://images.pexels.com/photos/6560266/pexels-photo-6560266.jpeg?auto=compress&cs=tinysrgb&w=700"); }
-.t-oil    { background-image: url("https://images.pexels.com/photos/3865608/pexels-photo-3865608.jpeg?auto=compress&cs=tinysrgb&w=700"); }
-.t-body   { background-image: url("https://images.pexels.com/photos/19641820/pexels-photo-19641820.jpeg?auto=compress&cs=tinysrgb&w=700"); }
-.t-facial { background-image: url("https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=700"); }
+.t-oil    { background-image: url("https://images.pexels.com/photos/6188115/pexels-photo-6188115.jpeg?auto=compress&cs=tinysrgb&w=700"); }
+.t-body   { background-image: url("https://images.pexels.com/photos/6186753/pexels-photo-6186753.jpeg?auto=compress&cs=tinysrgb&w=700"); }
+.t-facial { background-image: url("https://images.pexels.com/photos/5042609/pexels-photo-5042609.jpeg?auto=compress&cs=tinysrgb&w=700"); }
 .t-nail   { background-image: url("https://images.pexels.com/photos/3997386/pexels-photo-3997386.jpeg?auto=compress&cs=tinysrgb&w=700"); }
 .slide-txt h3 { font-family: var(--serif); font-size: 1.9rem; text-transform: uppercase; margin-bottom: 10px; }
 .slide-txt p { font-size: .82rem; color: var(--warm-gray); text-transform: uppercase; letter-spacing: .1em; }
@@ -736,6 +736,19 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .f-ig { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; color: var(--warm-gray); font-size: .78rem; letter-spacing: .06em; text-transform: none; transition: color .3s; }
 .f-ig:hover { color: var(--yellow-soft); }
 
+/* Vietnamese pride badge + flag */
+.vn-flag { width: 30px; height: 20px; border-radius: 3px; box-shadow: 0 2px 8px rgba(0,0,0,.3); flex: none; }
+.vn-badge {
+  display: inline-flex; align-items: center; gap: 12px; margin-top: 22px;
+  padding: 12px 18px; border-radius: 999px;
+  background: linear-gradient(120deg, rgba(218,37,29,.16), rgba(242,193,29,.12));
+  border: 1px solid rgba(242,193,29,.3);
+}
+.vn-badge span { font-size: .74rem; text-transform: uppercase; letter-spacing: .16em; color: var(--cream); }
+.f-vn { display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; }
+.f-vn .vn-flag { width: 24px; height: 16px; }
+.f-vn span { font-size: .74rem; text-transform: uppercase; letter-spacing: .12em; color: var(--warm-gray); }
+
 /* ---------- Floating contact cluster (glass) ---------- */
 .contact-cluster {
   position: fixed; right: 22px; bottom: 22px; z-index: 90;
@@ -817,6 +830,42 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .ap-close { opacity: .6; font-size: 1rem; transition: opacity .3s; }
 .ap-close:hover { opacity: 1; }
 .ap-hint { font-size: .8rem; color: var(--warm-gray); margin-bottom: 14px; }
+/* Voice view — animated orb + status */
+.ap-view[data-view="voice"] { text-align: center; padding: 14px 6px 4px; }
+.ap-orb {
+  width: 92px; height: 92px; margin: 8px auto 20px; position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, #f9e28a, #f2c11d 55%, #c99e0a);
+  box-shadow: 0 0 0 0 rgba(242,193,29,.4);
+}
+.ap-orb span {
+  position: absolute; inset: 0; border-radius: 50%;
+  border: 2px solid rgba(242,193,29,.5); opacity: 0;
+}
+.ap-orb[data-state="connecting"] { animation: orbPulse 1.1s ease-in-out infinite; }
+.ap-orb[data-state="listening"] span { animation: orbRing 2.4s ease-out infinite; }
+.ap-orb[data-state="listening"] span:nth-child(2) { animation-delay: .8s; }
+.ap-orb[data-state="listening"] span:nth-child(3) { animation-delay: 1.6s; }
+.ap-orb[data-state="speaking"] { animation: orbSpeak .5s ease-in-out infinite alternate; }
+.ap-orb[data-state="idle"] { filter: grayscale(.5) brightness(.8); }
+@keyframes orbPulse { 50% { box-shadow: 0 0 0 14px rgba(242,193,29,0); } }
+@keyframes orbSpeak { from { transform: scale(1); } to { transform: scale(1.12); } }
+@keyframes orbRing { 0% { opacity: .7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.8); } }
+.ap-status { font-family: var(--serif); font-size: 1.5rem; color: var(--cream); margin-bottom: 8px; }
+.ap-sub { font-size: .82rem; color: var(--warm-gray); max-width: 320px; margin: 0 auto 22px; }
+.ap-end {
+  border: 1px solid rgba(224,110,90,.6); color: #e88a78; border-radius: 999px;
+  padding: 11px 30px; font-size: .74rem; text-transform: uppercase; letter-spacing: .16em;
+  transition: background .3s, color .3s;
+}
+.ap-end:hover { background: #d0685a; color: #fff; border-color: #d0685a; }
+/* Chat view — prepared greeting bubble */
+.ap-greeting { margin-bottom: 14px; }
+.ap-bubble {
+  display: inline-block; background: rgba(242,193,29,.14); border: 1px solid rgba(242,193,29,.28);
+  color: var(--cream); font-size: .85rem; line-height: 1.5; border-radius: 4px 16px 16px 16px;
+  padding: 12px 16px;
+}
 .ap-widget { min-height: 120px; display: flex; align-items: center; justify-content: center; }
 .ap-widget elevenlabs-convai { position: static !important; width: 100%; }
 .ap-note { font-size: .82rem; color: var(--cream-2); text-align: center; padding: 20px 8px; }

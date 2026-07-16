@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=14">
+  <link rel="stylesheet" href="css/style.css?v=15">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
@@ -245,6 +245,13 @@
           <div class="stat-card"><b data-count="209">0</b><span data-i18n="about.s2">reviews</span></div>
           <div class="stat-card"><b data-count="7">0</b><span data-i18n="about.s3">signature services</span></div>
           <div class="stat-card"><b>EN·VI</b><span data-i18n="about.s4">spoken here</span></div>
+        </div>
+        <div class="vn-badge">
+          <svg class="vn-flag" viewBox="0 0 30 20" aria-hidden="true">
+            <rect width="30" height="20" rx="2.5" fill="#da251d"/>
+            <path fill="#ffff00" d="M15 4.2 l1.76 5.42 5.7 0 -4.61 3.35 1.76 5.42 -4.61 -3.35 -4.61 3.35 1.76 -5.42 -4.61 -3.35 5.7 0 Z"/>
+          </svg>
+          <span data-i18n="about.vn">Proudly Vietnamese · Đà Nẵng</span>
         </div>
       </div>
       <div class="about-body">
@@ -570,6 +577,7 @@
       <div class="f-col">
         <p data-i18n="foot.rights">all rights reserved</p>
         <p>© <span data-year></span> Nón Boutique Spa</p>
+        <p class="f-vn"><svg class="vn-flag" viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" rx="2.5" fill="#da251d"/><path fill="#ffff00" d="M15 4.2 l1.76 5.42 5.7 0 -4.61 3.35 1.76 5.42 -4.61 -3.35 -4.61 3.35 1.76 -5.42 -4.61 -3.35 5.7 0 Z"/></svg><span data-i18n="foot.vn">Made in Việt Nam</span></p>
       </div>
       <div class="f-col">
         <p data-i18n="foot.visit">visit us</p>
@@ -593,10 +601,10 @@
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
     </button>
     <div class="cc-items">
-      <button class="cc-btn cc-voice" data-open-assistant aria-label="Voice assistant" title="Voice">
+      <button class="cc-btn cc-voice" data-open-voice aria-label="Voice assistant" title="Talk to us">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
-      <button class="cc-btn cc-chat" data-open-assistant aria-label="Chat assistant" title="Chat">
+      <button class="cc-btn cc-chat" data-open-chat aria-label="Chat assistant" title="Chat">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3H9l-5 4V6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 8.5h8M8 11.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
       <a class="cc-btn cc-wa" data-whatsapp href="#" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
@@ -605,16 +613,28 @@
     </div>
   </div>
 
-  <!-- Assistant panel: one ElevenLabs agent shared by Voice + Chat -->
+  <!-- Assistant panel: Voice (live ElevenLabs) + Chat (widget) -->
   <div class="assistant-panel" data-assistant hidden>
     <div class="ap-head">
-      <p class="ap-title" data-i18n="assist.title">Nón Assistant</p>
+      <p class="ap-title" data-ap-title>Nón Assistant</p>
       <button class="ap-close" data-close-assistant aria-label="Close">✕</button>
     </div>
-    <p class="ap-hint" data-i18n="assist.hint">Ask about services, prices, hours or bookings — speak or type. Voice replies use our Vietnamese voice.</p>
-    <div class="ap-widget" data-widget-slot>
-      <p class="ap-note" data-no-agent data-i18n="assist.noagent" hidden>Voice &amp; chat are almost ready — paste the spa's ElevenLabs Agent ID into <code>js/config.js</code>.</p>
+
+    <div class="ap-view" data-view="voice" hidden>
+      <div class="ap-orb" data-ap-orb data-state="connecting" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p class="ap-status" data-ap-status data-i18n="assist.connecting">Connecting…</p>
+      <p class="ap-sub" data-i18n="assist.voicesub">Speak naturally — our Vietnamese voice replies. Ask about treatments, prices, hours or booking.</p>
+      <button class="ap-end" data-ap-end data-i18n="assist.endcall">End call</button>
     </div>
+
+    <div class="ap-view" data-view="chat" hidden>
+      <p class="ap-hint" data-i18n="assist.hint">Ask about services, prices, hours or bookings — type below.</p>
+      <div class="ap-greeting"><span class="ap-bubble" data-i18n="assist.greet">Xin chào! 🌿 Which treatment are you interested in — foot, hot stone, oil, facial or nail? And when would you like to visit?</span></div>
+      <div class="ap-widget" data-widget-slot>
+        <p class="ap-note" data-no-agent data-i18n="assist.noagent" hidden>Chat is almost ready — paste the spa's ElevenLabs Agent ID into <code>js/config.js</code>.</p>
+      </div>
+    </div>
+
     <div class="ap-actions">
       <button class="ap-act" data-assistant-book data-i18n="assist.book">Book now</button>
       <a class="ap-act ap-act-wa" data-whatsapp href="#" target="_blank" rel="noopener">WhatsApp</a>
@@ -686,10 +706,10 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=14"></script>
-  <script src="js/menu.js?v=3"></script>
+  <script src="js/main.js?v=15"></script>
+  <script src="js/menu.js?v=4"></script>
   <script src="js/reviews.js?v=1"></script>
   <script src="js/trio.js?v=1"></script>
-  <script src="js/contact.js?v=3"></script>
+  <script src="js/contact.js?v=4"></script>
 </body>
 </html>

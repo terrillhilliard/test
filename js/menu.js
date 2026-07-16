@@ -4,8 +4,8 @@
 (() => {
   const MENU = {
     foot:    { desc: 'board.d1', photo: 'https://images.pexels.com/photos/6628700/pexels-photo-6628700.jpeg?auto=compress&cs=tinysrgb&w=800',  rows: [[60, 200000], [90, 300000], [120, 400000]] },
-    body:    { desc: 'board.d2', photo: 'https://images.pexels.com/photos/19641820/pexels-photo-19641820.jpeg?auto=compress&cs=tinysrgb&w=800', rows: [[60, 200000], [90, 300000, 'board.oil'], [120, 400000, 'board.oil']] },
-    shampoo: { desc: 'board.d3', photo: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800',  rows: [[30, 100000], [60, 200000]] },
+    body:    { desc: 'board.d2', photo: 'https://images.pexels.com/photos/34821383/pexels-photo-34821383.jpeg?auto=compress&cs=tinysrgb&w=800', rows: [[60, 200000], [90, 300000, 'board.oil'], [120, 400000, 'board.oil']] },
+    shampoo: { desc: 'board.d3', photo: 'https://images.pexels.com/photos/5042607/pexels-photo-5042607.jpeg?auto=compress&cs=tinysrgb&w=800',  rows: [[30, 100000], [60, 200000]] },
   };
 
   // Approximate exchange rates: VND per 1 unit of the currency (edit as needed).
