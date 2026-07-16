@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
       </nav>
       <div class="header-actions">
         <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
-        <button class="book-link" data-open-modal data-i18n="cta.book">book a treatment</button>
+        <button class="book-link" data-wa-book data-i18n="cta.book">book a treatment</button>
         <button class="burger" aria-label="Menu" data-burger><span></span></button>
       </div>
     </div>
@@ -46,7 +46,7 @@
         <li><a href="#gift" data-i18n="nav.gift">Gift Cards</a></li>
         <li><a href="#contacts" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="book-link" data-open-modal data-i18n="cta.book">book a treatment</button>
+      <button class="book-link" data-wa-book data-i18n="cta.book">book a treatment</button>
       <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
     </div>
   </div>
@@ -70,9 +70,9 @@
       <line x1="446" y1="0" x2="446" y2="60" stroke="rgba(246,240,228,.25)" stroke-width="1.5"/>
       <path d="M446 60 L390 138 Q446 158 502 138 Z" fill="rgba(242,193,29,.5)"/>
     </svg>
-    <div class="hero-title" aria-label="Nón spa">
+    <div class="hero-title" aria-label="Nón Boutique spa">
       <div class="hero-word hero-word-1">
-        <span class="ltr">n</span><span class="ltr">ó</span><span class="ltr">n</span>
+        <span class="ltr" style="--i:0">n</span><span class="ltr" style="--i:1">ó</span><span class="ltr" style="--i:2">n</span><span class="ltr sp" style="--i:3">&nbsp;</span><span class="ltr" style="--i:4">b</span><span class="ltr" style="--i:5">o</span><span class="ltr" style="--i:6">u</span><span class="ltr" style="--i:7">t</span><span class="ltr" style="--i:8">i</span><span class="ltr" style="--i:9">q</span><span class="ltr" style="--i:10">u</span><span class="ltr" style="--i:11">e</span>
       </div>
       <div class="hero-word hero-word-2">
         <span class="ltr">s</span><span class="ltr">p</span><span class="ltr">a</span>
@@ -161,7 +161,7 @@
               <p class="menu-pricenote" data-menu-note></p>
             </div>
             <p class="menu-desc" data-menu-desc></p>
-            <button class="menu-book" data-open-modal data-i18n="cta.booknow">book now</button>
+            <button class="menu-book" data-i18n="cta.booknow">book now</button>
           </div>
         </div>
       </div>
@@ -460,7 +460,7 @@
 
   <!-- Big book button -->
   <section class="big-btn-block">
-    <button class="big-btn" data-open-modal><span data-i18n="cta.booknow">book now</span></button>
+    <button class="big-btn" data-wa-book><span data-i18n="cta.booknow">book now</span></button>
   </section>
 
   <!-- Footer -->
@@ -548,14 +548,14 @@
     </div>
   </div>
 
-  <script src="js/config.js?v=2"></script>
+  <script src="js/config.js?v=3"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=9"></script>
-  <script src="js/menu.js?v=1"></script>
+  <script src="js/main.js?v=10"></script>
+  <script src="js/menu.js?v=2"></script>
   <script src="js/reviews.js?v=1"></script>
-  <script src="js/contact.js?v=2"></script>
+  <script src="js/contact.js?v=3"></script>
 </body>
 </html>

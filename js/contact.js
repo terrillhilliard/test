@@ -12,6 +12,13 @@
     else a.style.display = 'none';
   });
 
+  // Every "book" button opens WhatsApp with the prepared booking template
+  document.querySelectorAll('[data-wa-book]').forEach((btn) =>
+    btn.addEventListener('click', () => {
+      if (waHref) window.open(waHref, '_blank', 'noopener');
+    })
+  );
+
   // ---------- Tap ripple (reduced-motion aware) ----------
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.addEventListener('click', (e) => {
@@ -78,10 +85,10 @@
     if (e.key === 'Escape' && !panel.hidden) closeAssistant();
   });
 
-  // "Book now" shortcut → reuse the existing booking modal
+  // "Book now" shortcut → WhatsApp with the prepared booking template
   document.querySelector('[data-assistant-book]').addEventListener('click', () => {
     closeAssistant();
-    document.querySelector('.header [data-open-modal]').click();
+    if (waHref) window.open(waHref, '_blank', 'noopener');
   });
 
   // ---------- TTS speaker buttons ----------

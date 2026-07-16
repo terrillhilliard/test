@@ -77,6 +77,16 @@
     })
   );
 
+  // "book now" → WhatsApp, pre-filled with the selected service + duration
+  document.querySelector('.menu-book').addEventListener('click', () => {
+    const cfg = window.NBS_CONFIG || {};
+    if (!cfg.WHATSAPP_NUMBER) return;
+    const row = MENU[current].rows[idx];
+    const svc = `${t('mtab.' + current)} ${row[0]}′ (${fmt(row[1])})`;
+    const msg = `Xin chào Nón Boutique Spa! 🌿 I'd like to book / Tôi muốn đặt lịch.\nService / Dịch vụ: ${svc}\nDay / Ngày: \nTime / Giờ: `;
+    window.open(`https://wa.me/${cfg.WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+  });
+
   // Re-render on language switch (main.js dispatches after applyLang) and
   // re-seat the indicator when tab widths change.
   document.addEventListener('nbs:langchange', render);

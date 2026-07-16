@@ -6,7 +6,7 @@ window.NBS_CONFIG = {
   // Currently the salon's listed phone (+84 704 493 053). Replace this value
   // if that number is not WhatsApp-enabled.
   WHATSAPP_NUMBER: '84704493053',
-  WHATSAPP_MESSAGE: "Xin chào Nón Boutique Spa! I'd like to book a massage. / Tôi muốn đặt lịch massage.",
+  WHATSAPP_MESSAGE: "Xin chào Nón Boutique Spa! 🌿 I'd like to book a treatment / Tôi muốn đặt lịch.\nService / Dịch vụ: \nDay / Ngày: \nTime / Giờ: ",
 
   // ElevenLabs Conversational AI agent id (public). The same agent powers
   // both the Voice and Chat panels so they share one persona + knowledge base.

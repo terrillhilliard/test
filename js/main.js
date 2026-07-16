@@ -173,7 +173,7 @@ if (!document.documentElement.classList.contains('gsap-motion')) {
 
 // Release the hero mask once the intro finished (tall script glyphs like "ó"
 // must not stay clipped by the word container)
-setTimeout(() => document.querySelector('.hero-title').classList.add('intro-done'), 2000);
+setTimeout(() => document.querySelector('.hero-title').classList.add('intro-done'), 2400);
 
 // Mobile menu
 const burger = document.querySelector('[data-burger]');
