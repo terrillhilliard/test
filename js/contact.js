@@ -78,12 +78,14 @@
     if (widgetLoaded) return;
     widgetLoaded = true;
     if (!AGENT) { noAgentNote.hidden = false; return; }
+    // Official ElevenLabs embed (voice + text) — same public agent id.
     const el = document.createElement('elevenlabs-convai');
     el.setAttribute('agent-id', AGENT);
     slot.appendChild(el);
     const s = document.createElement('script');
-    s.src = 'https://elevenlabs.io/convai-widget/index.js';
+    s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
     s.async = true;
+    s.type = 'text/javascript';
     document.body.appendChild(s);
   }
   function openChat() {
@@ -132,7 +134,10 @@
   function voiceFailed() {
     convo = null;
     setOrb('idle');
-    setStatus(t('assist.voicefail', 'Voice needs mic access — try Chat or WhatsApp instead.'));
+    setStatus(t('assist.voicefail', 'Opening the voice & chat widget…'));
+    // Fall back to the official ElevenLabs widget (it handles voice calls too)
+    loadWidget();
+    setTimeout(() => { if (!panel.hidden) openChat(); }, 1300);
   }
   function stopVoice() {
     if (convo) { try { convo.endSession(); } catch (e) {} convo = null; }

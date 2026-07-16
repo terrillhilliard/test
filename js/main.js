@@ -148,7 +148,7 @@ const I18N = {
   'assist.endcall':    { en: 'End call', vi: 'Kết thúc' },
   'assist.voicesub':   { en: 'Speak naturally — our Vietnamese voice replies. Ask about treatments, prices, hours or booking.',
                          vi: 'Cứ nói tự nhiên — trợ lý trả lời bằng giọng nữ Việt Nam. Hỏi về liệu trình, giá, giờ mở cửa hoặc đặt lịch.' },
-  'assist.voicefail':  { en: 'Voice needs mic access — try Chat or WhatsApp instead.', vi: 'Trợ lý thoại cần quyền micro — hãy thử Chat hoặc WhatsApp.' },
+  'assist.voicefail':  { en: 'Opening the voice & chat widget…', vi: 'Đang mở trợ lý thoại & chat…' },
   'assist.noagentshort': { en: 'Add the ElevenLabs Agent ID to enable voice.', vi: 'Thêm ElevenLabs Agent ID để bật trợ lý thoại.' },
   'assist.greet':   { en: 'Xin chào! 🌿 Which treatment are you interested in — foot, hot stone, oil, facial or nail? And when would you like to visit?',
                       vi: 'Xin chào! 🌿 Bạn quan tâm liệu trình nào — massage chân, đá nóng, tinh dầu, da mặt hay làm móng? Và bạn muốn ghé vào lúc nào?' },
