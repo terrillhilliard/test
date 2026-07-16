@@ -24,7 +24,7 @@ const I18N = {
   'hero.reviews':   { en: '· 209 Google reviews', vi: '· 209 đánh giá Google' },
   'hero.scroll':    { en: 'scroll to explore', vi: 'cuộn để khám phá' },
 
-  'menu.title':     { en: 'nón spa<br><em>Menu</em>', vi: 'thực đơn<br><em>Nón Spa</em>' },
+  'menu.title':     { en: 'Nón Boutique<br><em>Spa</em>', vi: 'Nón Boutique<br><em>Spa</em>' },
   'menu.lead':      { en: 'Choose from our', vi: 'Lựa chọn từ' },
   'menu.circled':   { en: 'wide range', vi: 'đa dạng' },
   'menu.rest':      { en: 'of rituals — foot, hot stone and oil massage, full-body therapies, facials and gentle nail care.',
@@ -106,6 +106,7 @@ const I18N = {
   'mtab.body':      { en: 'Body', vi: 'Toàn thân' },
   'mtab.shampoo':   { en: 'Shampoo', vi: 'Gội đầu' },
   'board.min':      { en: 'mins', vi: 'phút' },
+  'cur.note':       { en: 'Approx. conversion · payment in VND (₫)', vi: 'Quy đổi tương đối · thanh toán bằng VND (₫)' },
   'board.oil':      { en: 'oil · hot stone', vi: 'tinh dầu · đá nóng' },
   'board.d1':       { en: 'Reflexology & pressure points that revive you from the ground up.',
                       vi: 'Bấm huyệt & phản xạ học — đánh thức cơ thể từ đôi chân.' },

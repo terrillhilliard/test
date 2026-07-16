@@ -7,8 +7,8 @@
   <meta name="description" content="Nón Boutique Spa — foot, hot stone and oil massage, facials and nail care in the heart of An Thượng, Đà Nẵng. 4.8★ on Google.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=12">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=13">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
@@ -147,20 +147,32 @@
       <div class="menu-wrap">
         <h2 class="h-serif menu-heading reveal" data-i18n="board.title">Price <em>Menu</em></h2>
         <div class="menu-card reveal">
-          <div class="menu-tabs" role="tablist" aria-label="Service menu">
-            <button class="menu-tab active" data-menu-tab="foot" role="tab" aria-selected="true" data-i18n="mtab.foot">Foot</button>
-            <button class="menu-tab" data-menu-tab="body" role="tab" aria-selected="false" data-i18n="mtab.body">Body</button>
-            <button class="menu-tab" data-menu-tab="shampoo" role="tab" aria-selected="false" data-i18n="mtab.shampoo">Shampoo</button>
-            <span class="menu-ind" data-menu-ind aria-hidden="true"></span>
-          </div>
-          <div class="menu-body">
-            <div class="menu-durs" data-menu-durs></div>
-            <div class="menu-price-wrap">
-              <p class="menu-price" data-menu-price>200.000₫</p>
-              <p class="menu-pricenote" data-menu-note></p>
+          <div class="menu-photo" data-menu-photo role="img" aria-label="Treatment photo"></div>
+          <div class="menu-panel">
+            <div class="menu-tabs" role="tablist" aria-label="Service menu">
+              <button class="menu-tab active" data-menu-tab="foot" role="tab" aria-selected="true" data-i18n="mtab.foot">Foot</button>
+              <button class="menu-tab" data-menu-tab="body" role="tab" aria-selected="false" data-i18n="mtab.body">Body</button>
+              <button class="menu-tab" data-menu-tab="shampoo" role="tab" aria-selected="false" data-i18n="mtab.shampoo">Shampoo</button>
+              <span class="menu-ind" data-menu-ind aria-hidden="true"></span>
             </div>
-            <p class="menu-desc" data-menu-desc></p>
-            <button class="menu-book" data-i18n="cta.booknow">book now</button>
+            <div class="menu-body">
+              <div class="menu-durs" data-menu-durs></div>
+              <div class="menu-price-wrap">
+                <p class="menu-price" data-menu-price>200.000₫</p>
+                <p class="menu-pricenote" data-menu-note></p>
+              </div>
+              <div class="menu-cur" data-menu-cur role="group" aria-label="Currency">
+                <button class="cur-btn active" data-cur="VND">₫ VND</button>
+                <button class="cur-btn" data-cur="USD">$ USD</button>
+                <button class="cur-btn" data-cur="KRW">₩ KRW</button>
+                <button class="cur-btn" data-cur="CNY">¥ CNY</button>
+                <button class="cur-btn" data-cur="EUR">€ EUR</button>
+                <button class="cur-btn" data-cur="GBP">£ GBP</button>
+              </div>
+              <p class="cur-note" data-i18n="cur.note">Approx. conversion · payment in VND (₫)</p>
+              <p class="menu-desc" data-menu-desc></p>
+              <button class="menu-book" data-i18n="cta.booknow">book now</button>
+            </div>
           </div>
         </div>
       </div>
@@ -656,8 +668,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=12"></script>
-  <script src="js/menu.js?v=2"></script>
+  <script src="js/main.js?v=13"></script>
+  <script src="js/menu.js?v=3"></script>
   <script src="js/reviews.js?v=1"></script>
   <script src="js/contact.js?v=3"></script>
 </body>
