@@ -7,7 +7,7 @@
   <meta name="description" content="Nón Boutique Spa — foot, hot stone and oil massage, facials and nail care in the heart of An Thượng, Đà Nẵng. 4.8★ on Google.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
 </head>
@@ -21,6 +21,7 @@
         <ul>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#services" data-i18n="nav.services">Services</a></li>
+          <li><a href="#prices" data-i18n="nav.prices">Prices</a></li>
           <li><a href="#signature" data-i18n="nav.signature">Signature</a></li>
           <li><a href="#gift" data-i18n="nav.gift">Gift Cards</a></li>
           <li><a href="#contacts" data-i18n="nav.contact">Contact</a></li>
@@ -40,6 +41,7 @@
       <ul>
         <li><a href="#about" data-i18n="nav.about">About</a></li>
         <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#prices" data-i18n="nav.prices">Prices</a></li>
         <li><a href="#signature" data-i18n="nav.signature">Signature</a></li>
         <li><a href="#gift" data-i18n="nav.gift">Gift Cards</a></li>
         <li><a href="#contacts" data-i18n="nav.contact">Contact</a></li>
@@ -52,9 +54,21 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <svg class="hero-leaf" viewBox="0 0 400 360" fill="none" aria-hidden="true">
-      <path d="M200 20 C 90 80, 40 200, 60 340 C 170 320, 280 250, 310 140 C 325 85, 290 40, 200 20 Z" fill="rgba(112,133,115,.35)"/>
-      <path d="M200 20 C 160 130, 120 230, 60 340" stroke="rgba(243,238,232,.25)" stroke-width="2"/>
+    <div class="lights" aria-hidden="true">
+      <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
+      <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
+      <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
+    </div>
+    <svg class="hero-hats" viewBox="0 0 520 420" fill="none" aria-hidden="true">
+      <!-- hanging nón lá (conical hats), like the ones outside the salon -->
+      <line x1="120" y1="0" x2="120" y2="96" stroke="rgba(246,240,228,.25)" stroke-width="1.5"/>
+      <path d="M120 96 L52 190 Q120 214 188 190 Z" fill="rgba(242,193,29,.8)"/>
+      <path d="M120 96 L86 186 Q120 200 154 186 Z" fill="rgba(201,158,10,.55)"/>
+      <line x1="300" y1="0" x2="300" y2="150" stroke="rgba(246,240,228,.25)" stroke-width="1.5"/>
+      <path d="M300 150 L224 254 Q300 280 376 254 Z" fill="rgba(242,193,29,.65)"/>
+      <path d="M300 150 L262 250 Q300 264 338 250 Z" fill="rgba(201,158,10,.45)"/>
+      <line x1="446" y1="0" x2="446" y2="60" stroke="rgba(246,240,228,.25)" stroke-width="1.5"/>
+      <path d="M446 60 L390 138 Q446 158 502 138 Z" fill="rgba(242,193,29,.5)"/>
     </svg>
     <div class="hero-title" aria-label="Nón spa">
       <div class="hero-word hero-word-1">
@@ -125,6 +139,23 @@
         <span class="trio-variants" data-i18n="trio.3v">skin &amp; care</span>
       </span>
     </a>
+  </section>
+
+  <!-- Price board (from the street chalkboard) -->
+  <section class="board" id="prices">
+    <div class="container board-in">
+      <div class="board-card reveal">
+        <p class="board-eyebrow" data-i18n="board.welcome">Welcome</p>
+        <h2 class="board-title" data-i18n="board.title">All services<br><em>20% discount</em></h2>
+        <ul class="board-list">
+          <li><span data-i18n="board.i1">Foot massage · 60 mins</span><i></i><b>210.000₫</b></li>
+          <li><span data-i18n="board.i2">Body massage · 60 mins</span><i></i><b>240.000₫</b></li>
+          <li><span data-i18n="board.i3">Hair wash &amp; shampoo</span><i></i><b>80.000₫</b></li>
+        </ul>
+        <p class="board-note" data-i18n="board.note">prices from our street board — full menu in the salon</p>
+        <p class="board-thanks" data-i18n="board.thanks">Thank you!</p>
+      </div>
+    </div>
   </section>
 
   <!-- Gift + About -->
@@ -326,6 +357,6 @@
     </div>
   </div>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>

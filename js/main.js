@@ -11,6 +11,7 @@ const I18N = {
   'nav.signature':  { en: 'Signature', vi: 'Đặc trưng' },
   'nav.gift':       { en: 'Gift Cards', vi: 'Thẻ quà tặng' },
   'nav.contact':    { en: 'Contact', vi: 'Liên hệ' },
+  'nav.prices':     { en: 'Prices', vi: 'Bảng giá' },
 
   'cta.book':       { en: 'book a treatment', vi: 'đặt liệu trình' },
   'cta.booknow':    { en: 'book now', vi: 'đặt lịch ngay' },
@@ -72,6 +73,14 @@ const I18N = {
   'svc.5x':         { en: 'Gentle, glowing results', vi: 'Dịu nhẹ, rạng rỡ' },
   'svc.6':          { en: 'Nail', vi: 'Làm móng' },
   'svc.6x':         { en: 'Manicure &amp; pedicure care', vi: 'Chăm sóc móng tay & chân' },
+
+  'board.welcome':  { en: 'Welcome', vi: 'Chào mừng' },
+  'board.title':    { en: 'All services<br><em>20% discount</em>', vi: 'Mọi dịch vụ<br><em>giảm 20%</em>' },
+  'board.i1':       { en: 'Foot massage · 60 mins', vi: 'Massage chân · 60 phút' },
+  'board.i2':       { en: 'Body massage · 60 mins', vi: 'Massage toàn thân · 60 phút' },
+  'board.i3':       { en: 'Hair wash &amp; shampoo', vi: 'Gội đầu thư giãn' },
+  'board.note':     { en: 'prices from our street board — full menu in the salon', vi: 'giá theo bảng trước cửa — thực đơn đầy đủ tại spa' },
+  'board.thanks':   { en: 'Thank you!', vi: 'Cảm ơn bạn!' },
 
   'marq.label':     { en: 'An Thượng · Đà Nẵng', vi: 'An Thượng · Đà Nẵng' },
   'marq.note':      { en: '— 209 Google reviews', vi: '— 209 đánh giá trên Google' },
