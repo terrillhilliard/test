@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Dancing+Script:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23232120'/><line x1='50' y1='12' x2='50' y2='26' stroke='%23f6f0e4' stroke-width='3' stroke-linecap='round' opacity='.6'/><path d='M50 24 L13 76 Q50 92 87 76 Z' fill='%23f2c11d'/><path d='M50 24 L31 72 Q50 80 69 72 Z' fill='%23c99e0a'/><path d='M50 24 L13 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/><path d='M50 24 L87 76' stroke='%23a97c0c' stroke-width='1.5' opacity='.5'/></svg>">
 </head>
 <body>
@@ -701,15 +701,36 @@
     </div>
   </div>
 
+  <!-- First-visit offer popup -->
+  <div class="promo" data-promo hidden>
+    <div class="promo-overlay" data-promo-close></div>
+    <div class="promo-card" role="dialog" aria-modal="true" aria-label="First-visit offer">
+      <button class="promo-x" data-promo-close aria-label="Close">✕</button>
+      <span class="promo-badge"><i aria-hidden="true"></i><span data-i18n="promo.badge">First visit · Today only</span></span>
+      <h2 class="promo-title" data-i18n="promo.title">Your first visit is <em>20% off.</em></h2>
+      <p class="promo-sub" data-i18n="promo.sub">New to Nón Boutique Spa? Claim your welcome discount before today's offer runs out.</p>
+      <ul class="promo-list">
+        <li><span class="promo-tick" aria-hidden="true">✓</span><span data-i18n="promo.b1"><b>20% off</b> any treatment — up to 80.000₫ saved</span></li>
+        <li><span class="promo-tick" aria-hidden="true">✓</span><span data-i18n="promo.b2"><b>Foot, body, hot stone &amp; oil</b> — your choice</span></li>
+        <li><span class="promo-tick" aria-hidden="true">✓</span><span data-i18n="promo.b3"><b>Walk-in or reserve</b> — just mention this offer</span></li>
+      </ul>
+      <div class="promo-timer"><span data-i18n="promo.ends">Offer ends in</span> <b data-promo-clock>10:00</b></div>
+      <input class="promo-input" type="text" data-promo-name data-i18n-ph="promo.nameph" placeholder="Your name (optional)">
+      <button class="promo-cta" data-promo-claim><span data-i18n="promo.cta">Claim my 20% off</span> <span aria-hidden="true">→</span></button>
+      <p class="promo-fine" data-i18n="promo.fine">First-time guests only · Show at reception or mention on WhatsApp</p>
+    </div>
+  </div>
+
   <script src="js/config.js?v=3"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=16"></script>
+  <script src="js/main.js?v=17"></script>
   <script src="js/menu.js?v=4"></script>
   <script src="js/reviews.js?v=1"></script>
   <script src="js/trio.js?v=1"></script>
   <script src="js/contact.js?v=5"></script>
+  <script src="js/promo.js?v=1"></script>
 </body>
 </html>
