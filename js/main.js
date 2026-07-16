@@ -74,12 +74,18 @@ const I18N = {
   'svc.6':          { en: 'Nail', vi: 'Làm móng' },
   'svc.6x':         { en: 'Manicure &amp; pedicure care', vi: 'Chăm sóc móng tay & chân' },
 
-  'board.g1':       { en: 'Foot', vi: 'Massage chân' },
-  'board.g2':       { en: 'Body', vi: 'Massage toàn thân' },
-  'board.g3':       { en: 'Shampoo', vi: 'Gội đầu' },
+  'board.title':    { en: 'Price <em>Menu</em>', vi: 'Bảng <em>Giá</em>' },
+  'mtab.foot':      { en: 'Foot', vi: 'Chân' },
+  'mtab.body':      { en: 'Body', vi: 'Toàn thân' },
+  'mtab.shampoo':   { en: 'Shampoo', vi: 'Gội đầu' },
+  'board.min':      { en: 'mins', vi: 'phút' },
   'board.oil':      { en: 'oil · hot stone', vi: 'tinh dầu · đá nóng' },
-  'board.note':     { en: 'menu from our street board — book any ritual below', vi: 'theo bảng giá trước cửa — đặt lịch ngay bên dưới' },
-  'board.thanks':   { en: 'Thank You!', vi: 'Cảm ơn bạn!' },
+  'board.d1':       { en: 'Reflexology & pressure points that revive you from the ground up.',
+                      vi: 'Bấm huyệt & phản xạ học — đánh thức cơ thể từ đôi chân.' },
+  'board.d2':       { en: 'Head-to-toe massage — 90′ and 120′ include warm oil & hot stones.',
+                      vi: 'Massage toàn thân — gói 90′ và 120′ gồm tinh dầu ấm & đá nóng.' },
+  'board.d3':       { en: 'Relaxing herbal hair wash with head, neck & shoulder massage.',
+                      vi: 'Gội đầu dưỡng sinh, kết hợp massage đầu, cổ và vai.' },
 
   'marq.label':     { en: 'An Thượng · Đà Nẵng', vi: 'An Thượng · Đà Nẵng' },
   'marq.note':      { en: '— 209 Google reviews', vi: '— 209 đánh giá trên Google' },
@@ -130,6 +136,7 @@ function applyLang() {
   document.querySelectorAll('[data-lang-toggle]').forEach((btn) => {
     btn.textContent = lang === 'en' ? 'VI' : 'EN';
   });
+  document.dispatchEvent(new Event('nbs:langchange'));
 }
 
 document.querySelectorAll('[data-lang-toggle]').forEach((btn) =>

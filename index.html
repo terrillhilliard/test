@@ -144,37 +144,26 @@
   <!-- Price board (from the street chalkboard) -->
   <section class="board" id="prices">
     <div class="container board-in">
-      <div class="board-card reveal">
-        <h2 class="board-brand"><span class="nb">Nón</span> <span class="bs">Boutique Spa</span></h2>
-
-        <div class="board-group">
-          <h3 data-i18n="board.g1">Foot</h3>
-          <ul>
-            <li><span class="dur">60′</span><i></i><b>200.000₫</b></li>
-            <li><span class="dur">90′</span><i></i><b>300.000₫</b></li>
-            <li><span class="dur">120′</span><i></i><b>400.000₫</b></li>
-          </ul>
+      <div class="menu-wrap">
+        <p class="menu-eyebrow reveal">Nón</p>
+        <h2 class="h-serif menu-heading reveal" data-i18n="board.title">Price <em>Menu</em></h2>
+        <div class="menu-card reveal">
+          <div class="menu-tabs" role="tablist" aria-label="Service menu">
+            <button class="menu-tab active" data-menu-tab="foot" role="tab" aria-selected="true" data-i18n="mtab.foot">Foot</button>
+            <button class="menu-tab" data-menu-tab="body" role="tab" aria-selected="false" data-i18n="mtab.body">Body</button>
+            <button class="menu-tab" data-menu-tab="shampoo" role="tab" aria-selected="false" data-i18n="mtab.shampoo">Shampoo</button>
+            <span class="menu-ind" data-menu-ind aria-hidden="true"></span>
+          </div>
+          <div class="menu-body">
+            <div class="menu-durs" data-menu-durs></div>
+            <div class="menu-price-wrap">
+              <p class="menu-price" data-menu-price>200.000₫</p>
+              <p class="menu-pricenote" data-menu-note></p>
+            </div>
+            <p class="menu-desc" data-menu-desc></p>
+            <button class="menu-book" data-open-modal data-i18n="cta.booknow">book now</button>
+          </div>
         </div>
-
-        <div class="board-group">
-          <h3 data-i18n="board.g2">Body</h3>
-          <ul>
-            <li><span class="dur">60′</span><i></i><b>200.000₫</b></li>
-            <li><span class="dur">90′</span><small data-i18n="board.oil">oil · hot stone</small><i></i><b>300.000₫</b></li>
-            <li><span class="dur">120′</span><small data-i18n="board.oil">oil · hot stone</small><i></i><b>400.000₫</b></li>
-          </ul>
-        </div>
-
-        <div class="board-group">
-          <h3 data-i18n="board.g3">Shampoo</h3>
-          <ul>
-            <li><span class="dur">30′</span><i></i><b>100.000₫</b></li>
-            <li><span class="dur">60′</span><i></i><b>200.000₫</b></li>
-          </ul>
-        </div>
-
-        <p class="board-note" data-i18n="board.note">menu from our street board — book any ritual below</p>
-        <p class="board-thanks" data-i18n="board.thanks">Thank You!</p>
       </div>
     </div>
   </section>
@@ -426,7 +415,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="js/motion.js?v=1"></script>
-  <script src="js/main.js?v=7"></script>
+  <script src="js/main.js?v=8"></script>
+  <script src="js/menu.js?v=1"></script>
   <script src="js/contact.js?v=2"></script>
 </body>
 </html>
