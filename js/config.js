@@ -11,5 +11,5 @@ window.NBS_CONFIG = {
   // ElevenLabs Conversational AI agent id (public). The same agent powers
   // both the Voice and Chat panels so they share one persona + knowledge base.
   // Paste the spa's existing agent id here — do NOT create a new agent/voice.
-  ELEVENLABS_AGENT_ID: '',
+  ELEVENLABS_AGENT_ID: 'agent_8701kxnzgc02ft9vf8gjneanx2ph',
 };

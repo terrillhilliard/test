@@ -54,7 +54,7 @@
     el.setAttribute('agent-id', cfg.ELEVENLABS_AGENT_ID);
     slot.appendChild(el);
     const s = document.createElement('script');
-    s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+    s.src = 'https://elevenlabs.io/convai-widget/index.js';
     s.async = true;
     document.body.appendChild(s);
   }
