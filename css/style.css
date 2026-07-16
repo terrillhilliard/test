@@ -145,11 +145,14 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 @keyframes hatSway { from { transform: rotate(-1.2deg); } to { transform: rotate(1.6deg); } }
 
 .hero-title { position: relative; z-index: 2; text-align: center; }
-.hero-word { display: flex; justify-content: center; }
+/* Mask reveal: each word line clips its letters while they rise into view,
+   then the clip is released (intro-done) so tall script glyphs never crop. */
+.hero-word { display: flex; justify-content: center; overflow: hidden; }
+.hero-title.intro-done .hero-word { overflow: visible; }
 .hero-word .ltr {
   font-family: var(--serif); font-weight: 300; text-transform: uppercase;
   font-size: clamp(5.5rem, 17vw, 15rem); line-height: .88; letter-spacing: .04em;
-  opacity: 0; transform: translateY(60px);
+  transform: translateY(115%);
   animation: ltrUp 1s cubic-bezier(.2,.65,.25,1) forwards;
 }
 .hero-word-1 .ltr {
@@ -163,7 +166,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .hero-word-2 .ltr:nth-child(1) { animation-delay: .5s; }
 .hero-word-2 .ltr:nth-child(2) { animation-delay: .6s; }
 .hero-word-2 .ltr:nth-child(3) { animation-delay: .7s; }
-@keyframes ltrUp { to { opacity: 1; transform: none; } }
+@keyframes ltrUp { to { transform: none; } }
 
 .hero-bottom { position: absolute; bottom: 34px; left: 0; right: 0; z-index: 2; }
 .hero-bottom-in { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
@@ -353,6 +356,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .marquee-note { color: var(--yellow-soft); font-size: .9rem; }
 .marquee { border-top: 1px solid rgba(165,156,136,.25); border-bottom: 1px solid rgba(165,156,136,.25); padding: 22px 0; }
 .marquee + .marquee { border-top: none; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
 .marquee-track { display: flex; width: max-content; animation: scroll 28s linear infinite; }
 .marquee-track.reverse { animation-direction: reverse; animation-duration: 34s; }
 .marquee-track span {
@@ -504,11 +508,28 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .tts-btn.err { color: #d0685a; border-color: #d0685a; }
 @keyframes ttsPulse { 50% { opacity: .4; } }
 
+/* GSAP motion mode: JS owns reveals + scrolling, so disable the CSS versions */
+.gsap-motion { scroll-behavior: auto; }
+.gsap-motion .reveal { transition: none; }
+
+/* Custom cursor ring (added by motion.js on fine pointers) */
+.cursor-ring {
+  position: fixed; left: 0; top: 0; z-index: 200; pointer-events: none;
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 1.5px solid rgba(242,193,29,.75);
+  opacity: 0; transition: opacity .3s, width .25s ease, height .25s ease, border-color .25s;
+}
+.cursor-ring.on { opacity: 1; }
+.cursor-ring.grow { width: 58px; height: 58px; border-color: rgba(246,240,228,.8); }
+
 /* Reduced motion: stop float/ripple/pulse, keep everything usable */
 @media (prefers-reduced-motion: reduce) {
   .cc-btn, .bulb, .hero-hats, .marquee-track, .tts-btn.loading { animation: none !important; }
   .assistant-panel { transition: opacity .2s ease; transform: none; }
   .reveal { transition: opacity .4s ease; transform: none; }
+  .hero-word { overflow: visible; }
+  .hero-word .ltr { animation: none; transform: none; }
+  .cursor-ring { display: none; }
 }
 
 /* ---------- Responsive ---------- */

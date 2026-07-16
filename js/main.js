@@ -147,16 +147,23 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// Reveal on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+// Reveal on scroll — IntersectionObserver fallback; motion.js (GSAP) takes
+// over when its libraries loaded and the visitor allows motion.
+if (!document.documentElement.classList.contains('gsap-motion')) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+}
+
+// Release the hero mask once the intro finished (tall script glyphs like "ó"
+// must not stay clipped by the word container)
+setTimeout(() => document.querySelector('.hero-title').classList.add('intro-done'), 2000);
 
 // Mobile menu
 const burger = document.querySelector('[data-burger]');
