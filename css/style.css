@@ -685,7 +685,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   text-align: center; display: flex; align-items: center; justify-content: center;
   transition: background .25s, color .25s, border-color .25s;
 }
-.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip input { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; opacity: 0; pointer-events: none; overflow: hidden; clip-path: inset(50%); }
 .chip:hover { border-color: var(--dark); }
 .chip:has(input:checked) { background: var(--dark); color: var(--cream); border-color: var(--dark); }
 .chip:has(input:focus-visible) { outline: 2px solid var(--yellow-deep); outline-offset: 2px; }
@@ -1137,7 +1137,10 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .car-btn { top: 170px; width: 46px; height: 46px; font-size: 1rem; }
   .car-cap { padding: 20px; }
   .car-cap h3 { font-size: 1.5rem; }
-  .gift-card { width: 230px; height: 320px; }
+  .gift-cards { overflow: hidden; height: 400px; }
+  .gift-card { width: 190px; height: 270px; }
+  .gift-card-1 { left: 3%; }
+  .gift-card-2 { left: 32%; top: 14%; }
   .modal-in { padding: 80px 28px 40px; }
   .f-grid { grid-template-columns: 1fr; gap: 0; }
   .svc-chips { grid-template-columns: repeat(2, 1fr); }
