@@ -39,7 +39,6 @@
   }
   function close() {
     promo.classList.remove('open');
-    markSeen();
     clearInterval(timerId);
     setTimeout(() => { promo.hidden = true; }, 320);
   }
@@ -59,5 +58,6 @@
     close();
   });
 
-  if (!seen()) setTimeout(open, 3500);
+  // Show on every page load / refresh (no cooldown).
+  setTimeout(open, 2000);
 })();
