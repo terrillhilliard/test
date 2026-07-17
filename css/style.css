@@ -1127,6 +1127,8 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .hero { align-items: flex-start; }
   .hero-title { margin-top: 33vh; }
   .hero-word-1 { margin-bottom: .5rem; }
+  /* drop the string lights down so they sit balanced below the header */
+  .lights { top: 18vh; }
   .hero-word-1 .ltr { font-size: clamp(2.9rem, 14vw, 6rem); }
   .hero-word-2 .ltr { font-size: clamp(6rem, 28vw, 11rem); line-height: .9; }
 }
