@@ -34,7 +34,9 @@
 
   function open() {
     promo.hidden = false;
+    void promo.offsetWidth; // reflow so the entrance transition plays
     requestAnimationFrame(() => promo.classList.add('open'));
+    setTimeout(() => promo.classList.add('open'), 40); // fallback if rAF is throttled
     startTimer();
   }
   function close() {
