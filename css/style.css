@@ -408,7 +408,36 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 /* ---------- BorderGlow on the price menu (cursor-tracking gold edge glow) ---------- */
 .menu-glow {
   --edge-proximity: 0; --cursor-angle: 45deg; --edge-sensitivity: 32; --glow-padding: 40px;
+  --color-sensitivity: calc(var(--edge-sensitivity) + 18); --cone-spread: 24;
   position: relative; width: 100%; border-radius: 18px; isolation: isolate;
+}
+/* colored mesh-gradient border, revealed in the cursor's direction */
+.menu-glow > .menu-cone {
+  position: absolute; inset: 0; z-index: 4; pointer-events: none; border-radius: 18px;
+  mask-image: conic-gradient(from var(--cursor-angle) at center,
+    black calc(var(--cone-spread) * 1%), transparent calc((var(--cone-spread) + 15) * 1%),
+    transparent calc((100 - var(--cone-spread) - 15) * 1%), black calc((100 - var(--cone-spread)) * 1%));
+  -webkit-mask-image: conic-gradient(from var(--cursor-angle) at center,
+    black calc(var(--cone-spread) * 1%), transparent calc((var(--cone-spread) + 15) * 1%),
+    transparent calc((100 - var(--cone-spread) - 15) * 1%), black calc((100 - var(--cone-spread)) * 1%));
+  opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+  transition: opacity .25s ease-out;
+}
+.menu-glow > .menu-cone > .menu-ring {
+  position: absolute; inset: 0; border-radius: inherit; border: 1.6px solid transparent;
+  background:
+    radial-gradient(at 80% 55%, #f7d34f 0px, transparent 50%) border-box,
+    radial-gradient(at 69% 34%, #f2c11d 0px, transparent 50%) border-box,
+    radial-gradient(at 8% 6%, #ffe08a 0px, transparent 50%) border-box,
+    radial-gradient(at 41% 38%, #e8b0a0 0px, transparent 50%) border-box,
+    radial-gradient(at 86% 85%, #f7d34f 0px, transparent 50%) border-box,
+    radial-gradient(at 82% 18%, #c99e0a 0px, transparent 50%) border-box,
+    radial-gradient(at 51% 4%, #f2c11d 0px, transparent 50%) border-box,
+    linear-gradient(#f2c11d 0 100%) border-box;
+  -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
 .menu-glow > .edge-light {
   position: absolute; inset: calc(var(--glow-padding) * -1); border-radius: 40px;
