@@ -291,8 +291,28 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .trio-arrow { background: var(--yellow); color: var(--dark); }
 }
 
+/* ---------- Bounce cards (ritual fan) ---------- */
+.bounce-section {
+  padding: 30px 0 84px; display: flex; flex-direction: column; align-items: center;
+  gap: 30px; overflow: hidden; /* clip the fan edges so it never overflows */
+}
+.bounceCards {
+  position: relative; width: min(760px, 96vw); height: 300px;
+  display: flex; justify-content: center; align-items: center;
+}
+.bc-card {
+  position: absolute; width: 210px; aspect-ratio: 1;
+  border: 5px solid var(--cream); border-radius: 24px; overflow: hidden;
+  box-shadow: 0 14px 34px rgba(0,0,0,.45); cursor: pointer;
+  transition: box-shadow .3s;
+}
+.bc-card:hover { box-shadow: 0 22px 48px rgba(0,0,0,.6); }
+.bc-card:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+.bc-img { display: block; width: 100%; height: 100%; background-color: #241f1a; background-size: cover; background-position: center; }
+.bounce-cta { text-align: center; }
+
 /* ---------- Interactive price menu (dark glass, brand yellow accents) ---------- */
-.board { padding: 150px 0 40px; }
+.board { padding: 40px 0 40px; }
 .board-in { display: flex; justify-content: center; }
 .menu-wrap { width: min(920px, 100%); text-align: center; }
 .menu-eyebrow { font-family: var(--script); font-weight: 700; font-size: 1.9rem; color: var(--yellow); }
@@ -1130,6 +1150,9 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   .lights { top: 18vh; }
   .hero-word-1 .ltr { font-size: clamp(2.9rem, 14vw, 6rem); }
   .hero-word-2 .ltr { font-size: clamp(6rem, 28vw, 11rem); line-height: .9; }
+  /* tighten the bounce-card fan so it fits a phone without overflow */
+  .bounceCards { height: 200px; }
+  .bc-card { width: 122px; border-width: 3px; border-radius: 15px; }
 }
 @media (max-width: 560px) {
   .hero-bottom { bottom: 8vh; }
