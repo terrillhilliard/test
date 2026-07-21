@@ -66,10 +66,11 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .logo {
   font-family: var(--script); font-weight: 700; font-size: 1.8rem;
   color: var(--yellow); display: flex; align-items: baseline; gap: 10px;
+  text-transform: capitalize;
 }
 .logo span {
   font-family: var(--sans); font-weight: 400; font-style: normal;
-  font-size: .72rem; text-transform: uppercase; letter-spacing: .22em;
+  font-size: .72rem; text-transform: capitalize; letter-spacing: .18em;
   color: var(--cream-2);
 }
 
@@ -312,7 +313,7 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 .bounce-cta { text-align: center; }
 
 /* ---------- Interactive price menu (dark glass, brand yellow accents) ---------- */
-.board { padding: 40px 0 40px; }
+.board { padding: 40px 0 40px; overflow-x: clip; }
 .board-in { display: flex; justify-content: center; }
 .menu-wrap { width: min(920px, 100%); text-align: center; }
 .menu-eyebrow { font-family: var(--script); font-weight: 700; font-size: 1.9rem; color: var(--yellow); }
@@ -403,6 +404,39 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
 }
 .menu-book:hover { background: var(--yellow); color: var(--dark); box-shadow: 0 0 26px rgba(242,193,29,.35); }
 .menu-book:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+
+/* ---------- BorderGlow on the price menu (cursor-tracking gold edge glow) ---------- */
+.menu-glow {
+  --edge-proximity: 0; --cursor-angle: 45deg; --edge-sensitivity: 32; --glow-padding: 40px;
+  position: relative; width: 100%; border-radius: 18px; isolation: isolate;
+}
+.menu-glow > .edge-light {
+  position: absolute; inset: calc(var(--glow-padding) * -1); border-radius: 40px;
+  pointer-events: none; z-index: 3;
+  mask-image: conic-gradient(from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+  -webkit-mask-image: conic-gradient(from var(--cursor-angle) at center, black 2.5%, transparent 10%, transparent 90%, black 97.5%);
+  opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+  transition: opacity .25s ease-out;
+  mix-blend-mode: plus-lighter;
+}
+.menu-glow > .edge-light::before {
+  content: ""; position: absolute; inset: var(--glow-padding); border-radius: 18px;
+  box-shadow:
+    inset 0 0 0 1px rgba(242,193,29,.9),
+    inset 0 0 3px 0 rgba(242,193,29,.5),
+    inset 0 0 8px 0 rgba(242,193,29,.35),
+    inset 0 0 18px 0 rgba(242,193,29,.22),
+    inset 0 0 34px 2px rgba(242,193,29,.12),
+    0 0 3px 0 rgba(242,193,29,.5),
+    0 0 8px 0 rgba(242,193,29,.4),
+    0 0 18px 0 rgba(242,193,29,.28),
+    0 0 34px 2px rgba(242,193,29,.16),
+    0 0 60px 4px rgba(242,193,29,.08);
+}
+/* hover-only effect — hide on touch so the outer glow never causes overflow */
+@media (hover: none), (max-width: 700px) {
+  .menu-glow > .edge-light { display: none; }
+}
 
 /* ---------- Gift ---------- */
 .gift { padding: 120px 0; }
